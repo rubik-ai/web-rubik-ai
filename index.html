@@ -1,1 +1,104 @@
-Welcome to rubik.ai
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Rubik, Data Science Reimagined">
+    <meta name="author" content="rubik">
+    <link rel="icon" href="images/favicon.png">
+    <title>Rubik: Data Science Reimagined</title>
+
+    <!--bootstrap css-->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!--google font-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,800,800i,900,900i|Varela+Round" rel="stylesheet">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+
+    <!--bootstrap js-->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
+
+    <style>
+        html,  body{
+            overflow: hidden;
+        }
+        .container {
+            width: 100%;
+            padding: 0;
+            margin: 0;
+        }
+        #hero{
+            background:url("images/bg.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: bottom center;
+            /*background: rgba(255,255,255,1);*/
+            /*background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(240,240,240,1) 100%);*/
+            /*background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,255,255,1)), color-stop(100%, rgba(240,240,240,1)));*/
+            /*background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(240,240,240,1) 100%);*/
+            /*background: -o-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(240,240,240,1) 100%);*/
+            /*background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(240,240,240,1) 100%);*/
+            /*background: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(240,240,240,1) 100%);*/
+            /*filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f0f0f0', GradientType=0 );*/
+            position:relative;
+            height:100vh;
+        }
+
+        .header{
+            position:absolute;
+            top:50%;
+            text-align:center;
+            width:100%;
+            -ms-transform: translate(0,-50%); /* IE 9 */
+            -webkit-transform: translate(0,-50%); /* Safari */
+            transform: translate(0,-50%);
+
+        }
+        h1 {
+            color: #222;
+            font-size: 8vh;
+            font-family: 'Varela Round', sans-serif;
+            font-weight: 900;
+            margin-top: 20%;
+        }
+        h2{
+            color:#222;
+            font-size: 4vh;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 300;
+        }
+        p{
+            color:#222;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 300;
+        }
+        img {
+            max-width: 100%;
+            width: 100px;
+            padding: 12% 0 0%;
+        }
+
+    </style>
+</head>
+<body>
+<div class="container" style="width: 100%">
+    <div id="hero">
+        <div class="header">
+            <h1> Data Science Reimagined </h1>
+            <h2> <span style="color: #FFDC89;">Simple.</span> <span style="color: #F5A26F;">Beautiful.</span> <span style="color: #ED6D79;">Predictive.</span> </h2>
+            <div>
+                <img src="images/logo-blue.png" style="max-width: 100%;"/>
+            </div>
+            <p>
+                coming soon. reach us <a href="mailto:hi@rubik.ai">here</a>.
+            </p>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>
