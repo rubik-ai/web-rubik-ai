@@ -13,7 +13,8 @@
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <!--google font-->
-    <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700" rel="stylesheet">
+    <!--<link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700" rel="stylesheet">-->
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
     <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 
@@ -25,7 +26,7 @@
     <style>
         html,  body{
             overflow: hidden;
-            font-family: 'Ubuntu', sans-serif;
+            font-family: 'Lato', sans-serif;
         }
         .container {
             width: 100%;
@@ -33,7 +34,7 @@
             margin: 0;
         }
         #hero{
-            background:url("images/bg.png");
+            background:url("images/bg.jpg");
             background-size: cover;
             background-repeat: no-repeat;
             background-position: bottom center;
@@ -58,61 +59,73 @@
         h1 {
             color: #222;
             font-size: 8vh;
-            font-family: 'Ubuntu', sans-serif;
+            font-family: 'Lato', sans-serif;
             font-weight: 900;
-            margin-top: 15%;
+            margin:0;
+            padding:0;
         }
         h2{
-            color:#222;
+            color:#777;
             font-size: 4vh;
-            font-family: 'Ubuntu', sans-serif;
+            font-family: 'Lato', sans-serif;
             font-weight: 300;
         }
         p{
-            color:#222;
-            font-family: 'Ubuntu', sans-serif;
+            color:#777;
+            font-family: 'Lato', sans-serif;
             font-weight: 300;
         }
-        img {
+        .footer{
+            position: fixed;
+            bottom: 10px;
+            text-align: center;
+            width: 92%;
+        }
+        .footer img {
             max-width: 100%;
             width: 100px;
-            padding: 12% 0 0%;
+            padding: 0;
         }
         @media only screen and (max-width: 768px) and (orientation: portrait) {
             h1 {
-                margin-top: 50%;
+                /*margin-top: 50%;*/
                 font-size: 7vh;
             }
             h2 {
                 font-size: 3vh;
                 font-weight: 400;
             }
-            img {
-                padding: 40% 0 0%;
+            .footer img {
+                max-width: 100%;
+                width: 100px;
+                padding: 0;
             }
         }
         @media only screen and (max-width: 768px) and (orientation: landscape) {
             h1 {
-                margin-top: 10%;
                 font-size: 10vh;
             }
             h2 {
-                font-size: 6vh;
+                font-size: 4vh;
                 font-weight: 400;
+                margin: 5px 0 0;
             }
-            img {
-                padding: 8% 0 0%;
+            .footer img {
+                max-width: 100%;
+                width: 100px;
+                padding: 0;
             }
         }
-
     </style>
 </head>
 <body>
 <div class="container" style="width: 100%">
     <div id="hero">
         <div class="header">
-            <h1> Data Science Reimagined </h1>
-            <h2> <span style="color: #ecb100;">Simple.</span> <span style="color: #F5A26F;">Beautiful.</span> <span style="color: #ED6D79;">Predictive.</span> </h2>
+            <h1> Data Reimagined </h1>
+            <h2> Simple. Beautiful. Prescriptive. </h2>
+        </div>
+        <div class="footer">
             <div>
                 <img src="images/logo-blue.png" />
             </div>
