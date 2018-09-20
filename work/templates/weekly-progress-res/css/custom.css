@@ -31,7 +31,7 @@ body{
 .float-right{float: right;}
 
 .clearfix{clear: both;}
-.panel-report{border: 2px solid #ddd;padding: 10px 0px; background-color: #fff;}
+.panel-report{border: 1px solid #ddd;padding: 10px 0px; background-color: #fff;}
 .panel-report .panel-head{color: #fff;background-color: #333333;padding: 15px 55px;font-size: 24px;
 	font-family:'Roboto-Regular';}
 .panel-report .panel-head .picon{padding-right: 32px;float: left;}
