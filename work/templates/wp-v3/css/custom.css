@@ -10,7 +10,7 @@ body{
 	background-color: #fff;
 	margin: 0;
 	padding: 0;
-	font-family:'Roboto-Regular';
+	font-family:'Courier';
 	color: #666;
 
 }
@@ -39,12 +39,12 @@ body{
 .clearfix{clear: both;}
 .panel-report{border: 1px solid #ddd;padding: 10px 0px; background-color: #efefef;}
 .panel-report .panel-head{color: #fff;background-color: #333333;padding: 15px 55px;font-size: 24px;
-	font-family:'Roboto-Regular';}
+	font-family:'Courier';}
 .panel-report .panel-head .picon{padding-right: 32px;float: left;}
 .panel-report .panel-head .picon img{width: 30px;}
 
 .panel-report .panel-body{padding:  0;position: relative;}
-.main-head{margin: 0 20px;font-family:'Roboto-Bold';color: #333}
+.main-head{margin: 0 20px;font-family:'Courier';color: #333}
 .panel-report .panel-body .panel-title{padding-left: 100px;margin-bottom: 10px;}
 .chip{background-color: #5db927;color: #fff;border-radius: 8px;padding: 4px 10px;font-size: 13px;display: flex;
 	align-items: center;margin-top: 3px;}
