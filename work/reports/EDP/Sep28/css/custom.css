@@ -29,7 +29,7 @@ body{
 .container{width: 100%;}
 .row{margin-right: 15px;margin-left: 15px;}
 .col-6{width: 75%;margin: 10px auto;}
-.col-4{width: 30%;float: left;padding-left: 15px;padding-right: 15px;}
+.col-4{width: 30%;float: left;padding-left: 10px;padding-right: 10px;}
 .float-left{float: left;}
 .float-right{float: right;}
 
