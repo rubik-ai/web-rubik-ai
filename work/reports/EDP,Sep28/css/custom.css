@@ -55,7 +55,7 @@ margin-right: 34px;min-width: 100px;justify-content: center;}
 .mark img{padding-right: 1px;}
 
 .panel-report .panel-body  .pro-feature{background-color: #fff;padding: 12px 0 12px 100px;padding-left: 100px;margin-bottom: 30px;}
-.panel-report .panel-body  .pro-feature .icon img{width: auto;}
+.panel-report .panel-body  .pro-feature .icon img{width: 32px;}
 .panel-report .panel-body  .pro-feature .title{font-family:'COURBD';font-weight: bold;margin: 5px 0;color: #333333;font-size: 16px;}
 .panel-report .panel-body .pro-feature .content {color: #666;font-size: 13px;line-height: 22px;}
 
