@@ -1,0 +1,217 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>RubiK</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="./assets//css/style.css" />
+</head>
+
+<body>
+  <header class="main-header bg-white w-100 position-fixed">
+      <a class="navbar-brand mr-0 py-3" href="index.html">
+          <img src="./assets/images/rubik_logo.png" class="img-fluid" />
+        </a>
+  </header>
+  <div class="menu-sidebar position-fixed vertical-align">
+    <nav class="navbar navbar-light p-0">
+      <button class="navbar-toggler border-0 m-3" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon text-dark"></span>
+      </button>
+      <div class="collapse navbar-collapse font-weight-bold px-2" id="collapsibleNavbar">
+        <ul class="navbar-nav ml-auto d-none">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Why Us?</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Product</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Careers</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </li>
+        </ul>
+
+      </div>
+    </nav>
+  </div>
+  <section class="">
+    <div id="scroll">
+      <div class="content-area">
+        <div class="page" id="one">
+          <h1 class="section-main-heading fixed-heading font-weight-bold">The value of data</h1>
+          <div class="first-heading-section">
+            <h2 class="section-sub-heading font-weight-bold mt-5">simplified_</h2>
+          </div>
+        </div>
+        <div class="page" id="two">
+          <div class="first-heading-section">
+            <h2 class="section-sub-heading font-weight-bold mt-5">democratized_</h2>
+          </div>
+        </div>
+        <div class="page" id="three">
+          <div class="first-heading-section">
+            <h2 class="section-sub-heading font-weight-bold mt-5">reimagined_</h2>
+          </div>
+        </div>
+        <div class="page bg-white" id="four">
+          <div class="row w-75">
+            <div class="col-lg-12">
+                <div class="input-group border-bottom border-secondary">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text border-0 bg-white text-dark font-weight-bold">Jump to &gt; </span>
+                  </div>
+                  <input type="text" class="form-control border-0 search-category" placeholder="(Product, About etc.)"
+                    aria-describedby="button-addon2">
+                  <div class="input-group-append">
+                    <a href="./product.html" class="btn bg-white btn-link text-dark border-0" ><i class="fa fa-search"></i></a>
+                  </div>
+                </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- <div class="page text-white px-3 product-section" id="four">
+          <div class="row">
+            <div class="col-lg-6 col-md-9">
+              <h2 class="section-main-heading font-weight-bold">Data Products for an AI-Powered World</h2>
+              <p>Deriving value from data is crucial for maintaining a competitive edge in your industry. But, the
+                technical acumen required to funnel the right data to the right person at the right time is a barrier
+                to
+                becoming a data- driven enterprise.</p>
+              <p>In the past, only those with high tech skills were able to access and understand the complexities of
+                massive datasets. As a result, extracting</p>
+              <p>Rubik solves the data gatekeeper problem. We build data products with a streamlined and powerful UX so
+                that anyone in your enterprise can easily glean valuable insights from a variety of data types —
+                without
+                the need for advanced technical knowledge.</p>
+
+              <br />
+              <p class="m-0">Let’s work together.</p>
+              <p class="m-0">Please email</p>
+              <a href="mailto:dearkindsirs@rubik.io">dearkindsirs@rubik.io</a>
+            </div>
+          </div>
+        </div> -->
+      </div>
+    </div>
+  </section>
+
+  <script>
+    /* See related post at
+    https://codepen.io/Javarome/post/full-page-sliding
+    */
+    function ScrollHandler(pageId) {
+      var page = document.getElementById(pageId);
+      var pageStart = page.offsetTop;
+      var pageJump = false;
+      var viewStart;
+      var duration = 1000;
+      var scrolled = document.getElementById("scroll");
+
+      function scrollToPage() {
+        pageJump = true;
+
+        // Calculate how far to scroll
+        var startLocation = viewStart;
+        var endLocation = pageStart;
+        var distance = endLocation - startLocation;
+
+        var runAnimation;
+
+        // Set the animation variables to 0/undefined.
+        var timeLapsed = 0;
+        var percentage, position;
+
+        var easing = function (progress) {
+          return progress < 0.5
+            ? 4 * progress * progress * progress
+            : (progress - 1) * (2 * progress - 2) * (2 * progress - 2) + 1; // acceleration until halfway, then deceleration
+        };
+
+        function stopAnimationIfRequired(pos) {
+          if (pos == endLocation) {
+            cancelAnimationFrame(runAnimation);
+            setTimeout(function () {
+              pageJump = false;
+            }, 500);
+          }
+        }
+
+        var animate = function () {
+          timeLapsed += 16;
+          percentage = timeLapsed / duration;
+          if (percentage > 1) {
+            percentage = 1;
+            position = endLocation;
+          } else {
+            position = startLocation + distance * easing(percentage);
+          }
+          scrolled.scrollTop = position;
+          runAnimation = requestAnimationFrame(animate);
+          stopAnimationIfRequired(position);
+          console.log("position=" + scrolled.scrollTop + "(" + percentage + ")");
+        };
+        // Loop the animation function
+        runAnimation = requestAnimationFrame(animate);
+      }
+
+      window.addEventListener("wheel", function (event) {
+        viewStart = scrolled.scrollTop;
+        if (!pageJump) {
+          var pageHeight = page.scrollHeight;
+          var pageStopPortion = pageHeight / 2;
+          var viewHeight = window.innerHeight;
+
+          var viewEnd = viewStart + viewHeight;
+          var pageStartPart = viewEnd - pageStart;
+          var pageEndPart = pageStart + pageHeight - viewStart;
+
+          var canJumpDown = pageStartPart >= 0;
+          var stopJumpDown = pageStartPart > pageStopPortion;
+
+          var canJumpUp = pageEndPart >= 0;
+          var stopJumpUp = pageEndPart > pageStopPortion;
+
+          var scrollingForward = event.deltaY > 0;
+          if (
+            (scrollingForward && canJumpDown && !stopJumpDown) ||
+            (!scrollingForward && canJumpUp && !stopJumpUp)
+          ) {
+            event.preventDefault();
+            scrollToPage();
+          }
+          false; //
+        } else {
+          event.preventDefault();
+        }
+      });
+    }
+    new ScrollHandler("one");
+    new ScrollHandler("two");
+    new ScrollHandler("three");
+    new ScrollHandler("four");
+  </script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1"
+    crossorigin="anonymous"></script>
+
+</body>
+
+</html>
