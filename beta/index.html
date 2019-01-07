@@ -27,7 +27,6 @@
         <input type="checkbox" />
         <span></span>
         <span></span>
-        <span></span>
         <ul id="menu" class="menu-content-list d-flex flex-column justify-content-between">
           <li class="py-3"><a href="./index.html"><img src="./assets/images/rubik_logo_white.png" width="100" /></a></li>
           <li>
@@ -62,34 +61,24 @@
     <div id="scroll">
       <div class="content-area">
         <div class="page" id="one">
-          <h1 class="section-main-heading fixed-heading font-weight-bold">The value of data</h1>
-          <div class="first-heading-section">
-            <h2 class="section-sub-heading font-weight-bold">simplified_</h2>
-          </div>
-        </div>
-        <div class="page" id="two">
-          <div class="first-heading-section">
-            <h2 class="section-sub-heading font-weight-bold">democratized_</h2>
-          </div>
-        </div>
-        <div class="page" id="three">
-          <div class="first-heading-section">
-            <h2 class="section-sub-heading font-weight-bold">reimagined_</h2>
+          <div>
+            <h1 class="section-main-heading fixed-heading font-weight-bold d-inline-block mr-3 my-0">The value of data </h1>
+              <h2 class="typewrite section-sub-heading font-weight-bold d-inline-block" data-period="2000" data-type='[ "simplified", "democratized", "reimagined" ]'>
+                <span class="wrap"></span>
+              </h2>
+              <h2 class="blinking-cursor section-sub-heading font-weight-bold d-inline-block">_</h2>
           </div>
         </div>
         <div class="page bg-white" id="four">
           <div class="row w-100">
             <div class="col-lg-9">
-              <div class="input-group border-bottom border-secondary mb-2">
-                <div class="input-group-prepend">
-                  <span class="input-group-text border-0 bg-white text-dark font-weight-bold">Jump to &gt; </span>
-                </div>
-                <input type="text" class="form-control border-0 search-category" placeholder="(Product, About etc.)"
-                  aria-describedby="button-addon2">
+              <div class="input-group border-bottom border-secondary mb-2">                
+                <input type="text" class="form-control border-0 search-category px-0" aria-describedby="button-addon2">
                 <div class="input-group-append">
                   <a href="./product.html" class="btn bg-white btn-link text-dark border-0"><i class="fa fa-search"></i></a>
                 </div>
               </div>
+              <span class="font-weight-bold">Suggested : </span><em><a href="./product.html" class="btn-link">Product</a>, <a href="./about.html" class="btn-link">About</a>...</em>
 
             </div>
           </div>
@@ -192,8 +181,6 @@
       });
     }
     new ScrollHandler("one");
-    new ScrollHandler("two");
-    new ScrollHandler("three");
     new ScrollHandler("four");
   </script>
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
