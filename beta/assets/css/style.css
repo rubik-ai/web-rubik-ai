@@ -14,16 +14,19 @@ body {
 
 .main-header {
     z-index: 99;
-    padding: 0 50px;
+    padding: 0 15px 0 150px;
     height: 60px;
 }
 
 .navbar-brand {
-    width: 90px;
+    width: 100px;
 }
 
 .page-title-head {
+    line-height: 28px;
     color: #ccc;
+    font-size: 18px;
+    vertical-align: middle;
 }
 
 .menu-sidebar {
@@ -44,7 +47,11 @@ body {
 }
 
 p {
-    font-size: 12px;
+    font-size: 14px;
+}
+
+.w-83 {
+    width: 83%;
 }
 
 .section-main-heading {
@@ -55,12 +62,12 @@ p {
 .section-main-heading.fixed-heading {
     position: fixed;
     z-index: -1;
-    top: calc(50% - 25px)
+    top: calc(50% + 8px);
 }
 
 .section-sub-heading {
     color: #BEBEBE;
-    margin-top: 45px;
+    margin-top: 85px;
 }
 
 #scroll {
@@ -89,11 +96,19 @@ p {
 }
 
 .content-section-dark {
-    background: #000;
+    background: #111;
 }
 
 .font--open-sans {
     font-family: 'Open Sans', sans-serif;
+}
+
+.font--courier {
+    font-family: Courier, monospace;
+}
+
+.text-gray {
+    color: #aeaeae;
 }
 
 .page-heading {
@@ -117,23 +132,17 @@ p {
     left: -5px;
     cursor: pointer;
     opacity: 0;
-    /* hide this */
     z-index: 2;
-    /* and place it over the hamburger */
     -webkit-touch-callout: none;
 }
 
-/*
- * Just a quick hamburger
- */
-
 #menuToggle span {
     display: block;
-    width: 33px;
-    height: 4px;
+    width: 16px;
+    height: 1px;
     margin-bottom: 5px;
     position: relative;
-    background: #000;
+    background: #111;
     border-radius: 3px;
     z-index: 1;
     transform-origin: -1px 0px;
@@ -148,53 +157,32 @@ p {
     transform-origin: 0% 100%;
 }
 
-/* 
- * Transform all the slices of hamburger
- * into a crossmark.
- */
-
 #menuToggle input:checked~span {
     opacity: 1;
     transform: rotate(45deg) translate(-5px, -4px);
     background: #ccc;
-    height: 3px;
 }
-
-/*
- * But let's hide the middle one.
- */
 
 #menuToggle input:checked~span:nth-last-child(3) {
     opacity: 0;
     transform: rotate(0deg) scale(0.2, 0.2);
 }
 
-/*
- * Ohyeah and the last one should go the other direction
- */
-
 #menuToggle input:checked~span:nth-last-child(2) {
-    transform: rotate(-45deg) translate(-1px, 0px);
+    transform: rotate(-45deg) translate(4px, -5px);
 }
-
-/*
- * Make this absolute positioned
- * at the top left of the screen
- */
 
 #menu {
     position: fixed;
     left: 0;
-    padding: 20px;
+    padding: 20px 120px;
     top: 0px;
     width: 100%;
     bottom: 0px;
     margin: 0;
-    padding-left: 120px;
     background: #111;
     list-style-type: none;
     -webkit-font-smoothing: antialiased;
-    /* to stop flickering of text in safari */
     transform-origin: 0% 0%;
     transform: translate(-102%, 0);
     transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
@@ -204,25 +192,30 @@ p {
     list-style-type: none;
 }
 
-#menu li {
-    padding: 10px 0;
-    font-size: 26px;
+#menu .menu-main-links li {
+    padding: 20px 0;
+    font-size: 64px;
     font-weight: bold;
-    line-height: 30px;
+    line-height: 75px;
 }
 
 #menu li a {
     color: #ccc
 }
 
+.menu-sub-links li {
+    font-size: 20px;
+    line-height: 30px;
+}
+
 .social-links--heading__font11 {
     font-weight: normal;
     font-size: 11px;
-    line-height: 10px;
+    line-height: 15px;
 }
 
 #menu li .social-links {
-    margin: -5px;
+    margin: 0 -5px;
 }
 
 #menu li .social-links li {
@@ -249,13 +242,16 @@ p {
     display: none;
 }
 
-/*
- * And let's slide it in from the left
- */
-
 #menuToggle input:checked~ul {
     transform: none;
 }
+
+.basic-list-points li {
+    line-height: 20px;
+    padding: 5px 0;
+}
+
+/* media query*/
 
 @media (max-width:768px) {
     .content-area {
