@@ -1,11 +1,10 @@
-@import url('https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i');
 * {
     outline: 0;
     text-decoration: none !important;
 }
 
 body {
-    font-family: Courier, monospace;
+    font-family: 'Open Sans', sans-serif;
     background: #fff;
     font-size: .875rem;
     overflow: hidden;
@@ -22,7 +21,7 @@ body {
     width: 100px;
 }
 
-.page-title-head {
+.page-title-head, .page-title-head:hover {
     line-height: 28px;
     color: #ccc;
     font-size: 18px;
@@ -54,14 +53,19 @@ p {
     width: 83%;
 }
 
+.h-100vh {
+    height: 100vh;
+}
+
 .section-main-heading {
     font-size: 38px;
     line-height: 48px;
-    margin-top: 60px;
 }
 
 .section-sub-heading {
     color: #BEBEBE;
+    font-size: 38px;
+    line-height: 48px;
 }
 
 #scroll {
@@ -103,6 +107,10 @@ p {
 
 .text-gray {
     color: #aeaeae;
+}
+
+.text-red {
+    color: #f00
 }
 
 .page-heading {
@@ -188,6 +196,37 @@ p {
     font-size: 64px;
     font-weight: bold;
     line-height: 75px;
+    transform-origin: 0% 0%;
+    transform: translate(-120%, 0);
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+}
+
+#menuToggle input:checked~ul {
+    transform: none;
+}
+
+#menuToggle input:checked~ul .menu-main-links li {
+    transform: none;
+    transition-delay: .1s;
+    transition-duration: 1s
+}
+
+#menuToggle input:checked~ul .menu-main-links li:nth-child(2) {
+    transition-delay: .2s;
+}
+
+#menuToggle input:checked~ul .menu-main-links li:nth-child(3) {
+    transition-delay: .3s;
+}
+
+.menu-sub-links-animation {
+    opacity: 0;
+    transition: all .5s ease;
+}
+
+#menuToggle input:checked~ul .menu-sub-links-animation {
+    opacity: 1;
+    transition-delay: .8s;
 }
 
 #menu li a {
@@ -231,10 +270,6 @@ p {
 
 #menu li .social-links li:last-child::after {
     display: none;
-}
-
-#menuToggle input:checked~ul {
-    transform: none;
 }
 
 .basic-list-points li {
@@ -296,6 +331,38 @@ p {
     }
 }
 
+.page-less-content {
+    height: 100%
+}
+
+.team-social-list {
+    margin: 0 -10px;
+}
+
+.team-social-list li {
+    padding: 5px 10px;
+    display: inline-block;
+}
+
+.openings-heading {
+    padding-top: 25px;
+    position: relative;
+    padding-bottom: 20px;
+}
+
+.openings-heading::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 35px;
+    border-top: 1px solid #eee;
+}
+
+.email-text-bottom, .email-text-bottom a {
+    color: #666;
+}
+
 /* media query*/
 
 @media (max-width:768px) {
@@ -306,39 +373,62 @@ p {
     .page-heading {
         font-size: 3rem;
     }
+    .main-header {
+        padding-left: 120px;
+    }
+    .email-text-bottom {
+        font-size: 16px;
+        line-height: 20px;
+        padding: 3px 0;
+    }
+    .email-text-bottom, .email-text-bottom a {
+        color: #bbb;
+    }
 }
 
 @media (max-width:576px) {
     .main-header {
-        padding: 0 15px;
+        padding-left: 65px;
     }
-    .section-main-heading {
-        font-size: 32px;
-        line-height: 34px;
-    }
-    .section-sub-heading {
-        font-size: 22px;
-        line-height: 24px;
-        color: #BEBEBE;
+    #menu .menu-main-links li {
+        font-size: 50px;
+        line-height: 55px;
     }
     .menu-sidebar {
         margin-left: 15px;
         width: 50px;
     }
     .content-area {
-        width: calc(100% - 65px);
-        margin-right: 0;
+        width: calc(100% - 80px);
     }
     .page-heading {
         font-size: 2.5rem;
     }
     #menu {
-        padding-left: 100px;
+        padding-left: 80px;
+        padding-right: 10px;
     }
-}
-
-@media (max-width:390px) {
+    .page-less-content {
+        height: auto
+    }
+    .section-main-heading {
+        font-size: 16px;
+        line-height: 20px;
+    }
     .section-sub-heading {
-        margin-top: 75px;
+        color: #BEBEBE;
+        font-size: 16px;
+        line-height: 20px;
+    }
+    .menu-sidebar {
+        height: 100vh;
+        top: 0px;
+    }
+    .page-height-mobile {
+        top: 0 !important;
+        height: 100vh !important;
+    }
+    .page-height-mobile .page {
+        height: 100vh !important;
     }
 }
