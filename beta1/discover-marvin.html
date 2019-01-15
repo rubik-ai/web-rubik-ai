@@ -9,60 +9,61 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
   <!----------CSS links------->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
     crossorigin="anonymous">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
   <link rel="stylesheet" href="./assets/css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css" />
 </head>
 
 <body>
-    <div class="menu-sidebar position-fixed vertical-align">
-        <nav role="navigation">
-            <div id="menuToggle">
-                <input type="checkbox" />
-                <span></span>
-                <span></span>
-                <ul id="menu" class="menu-content-list">
-                    <div class="container d-flex flex-column justify-content-between h-100">
-                        <li><a href="./index.html"><img src="./assets/images/rubik_logo_white.png" width="100" /></a></li>
-                        <li>
-                            <ul class="my-3 p-0 menu-main-links">
-                                <li><a href="./index.html#why-us">Why Us?</a></li>
-                                <li><a href="./discover-marvin.html">Product</a></li>
-                                <li><a href="./about.html">About Us</a></li>
-                                <li><a href="./about.html#careers" class="tab-link">Careers</a></li>
-                                <li><a href="#">Contact</a></li>
-                            </ul>
-                        </li>
-                        <li class="social-media-links">
-                            <div class="font--open-sans">
-                                <h6 class="text-white">You may find us on</h6>
 
-                                <ul class="p-0 social-links">
-                                    <li class="text-muted"><a href="#">Facebook</a></li>
-                                    <li class="text-muted"><a href="#">Instagram</a></li>
-                                    <li class="text-muted"><a href="#">Twitter</a></li>
-                                    <li class="text-muted"><a href="#">LinkedIn</a></li>
-                                </ul>
-                            </div>
-                        </li>
-                    </div>
-
+  <div class="menu-sidebar position-fixed vertical-align">
+      <nav role="navigation">
+        <div id="menuToggle">
+          <input type="checkbox" />
+          <span></span>
+          <span></span>
+          <ul id="menu" class="menu-content-list">
+            <div class="container d-flex flex-column justify-content-between h-100">
+              <li><a href="./index.html"><img src="./assets/images/rubik_logo_white.png" width="100" /></a></li>
+              <li>
+                <ul class="my-3 p-0 menu-main-links">
+                  <li><a href="./index.html#why-us">Why Us?</a></li>
+                  <li><a href="./discover-marvin.html">Product</a></li>
+                  <li><a href="./about.html">About Us</a></li>
+                  <li><a href="./careers.html" class="tab-link">Careers</a></li>
+                  <li><a href="#">Contact</a></li>
                 </ul>
+              </li>
+              <li class="social-media-links">
+                <div class="font--source-sans-pro">
+                  <h6 class="text-white">You may find us on</h6>
+  
+                  <ul class="p-0 social-links">
+                    <li class="text-muted"><a href="#">Facebook</a></li>
+                    <li class="text-muted"><a href="#">Instagram</a></li>
+                    <li class="text-muted"><a href="#">Twitter</a></li>
+                    <li class="text-muted"><a href="#">LinkedIn</a></li>
+                  </ul>
+                </div>
+              </li>
             </div>
-        </nav>
-    </div>
-
+  
+          </ul>
+        </div>
+      </nav>
+    <h5 class="font-weight-bold m-0 page-title-head"><span><a href="index.html">rubik_</a> product</span></h5>
+  </div>
   <header class="marvin-header w-100">
-    <h5 class="font-weight-bold m-0 page-title-head">rubik_product</h5>
-    <div class="container">
+    <div class="container wow fadeIn">
       <a class="navbar-brand mr-0 py-3" href="index.html">
         <img src="./assets/images/rubik_logo_white.png" class="img-fluid" />
       </a>
       <div class="mt-5 py-5 text-white">
-        <h1 class="font-weight-bold display-4 font--courier">Marvin</h1>
-        <p class="font--open-sans mt-4 w-50 custom-font-lead">The Rubik Marvin platform securely ingests, processes,
+        <h1 class="font-weight-bold custom-header-heading font--courier">Marvin</h1>
+        <p class="mt-4 w-75">The Rubik Marvin platform securely ingests,
+          processes,
           explores and distributes
           enterprise data. Rubik Marvin serves as a single and unified enterprise data platform
           that will make sense of your disparate data sets by preparing and presenting them in
@@ -70,7 +71,7 @@
           within your enterprise to deploy data-driven decision making.</p>
       </div>
 
-      <ul class="nav nav-tabs font--open-sans custom-tab--header border-0 font-weight-bold" role="tablist">
+      <ul class="nav nav-tabs custom-tab--header border-0 mt-4" role="tablist">
         <li class="nav-item">
           <a class="nav-link active" data-toggle="pill" href="#overview">Overview</a>
         </li>
@@ -95,12 +96,12 @@
       <div class="tab-content pt-5">
         <div id="overview" class="tab-pane active"><br>
           <div class="row">
-            <div class="col-2 py-3">
-              <h5 class="text-muted font-weight-bold">Marvin specs</h5>
+            <div class="col-md-3 pt-3">
+              <h4 class="text-muted font-weight-bold wow fadeIn" data-wow-duration="200ms" data-wow-delay="200ms">Marvin specs</h4>
             </div>
-            <div class="col-10">
-              <div class="py-3">
-                <h3>Config-driven data integration </h3>
+            <div class="col-md-9">
+              <div class="py-3 wow fadeInRight" data-wow-duration="500ms" data-wow-delay="200ms">
+                <h2 class="font-weight-bold">Config-driven data integration </h2>
                 <p>We understand the need for teams to be able to ingest ad-hoc data sources in addition to the
                   regularized internal
                   and external data inflows. In order to make this process efficient, Rubik Marvin provides
@@ -114,8 +115,8 @@
               </div>
 
 
-              <div class="py-3">
-                <h3>Operational flexibility </h3>
+              <div class="py-3 wow fadeInRight" data-wow-duration="500ms" data-wow-delay="400ms">
+                <h2 class="font-weight-bold">Operational flexibility </h2>
                 <p>We strongly believe that operational flexibility is what differentiates a good data platform from
                   a great one. This
                   starts with being able to immediately identify data quality issues and anomalies as close to the
@@ -127,8 +128,8 @@
 
 
 
-              <div class="py-3">
-                <h3>Pipeline as the source of truth </h3>
+              <div class="py-3 wow fadeInRight" data-wow-duration="500ms" data-wow-delay="400ms">
+                <h2 class="font-weight-bold">Pipeline as the source of truth </h2>
                 <p>Different applications across an enterprise require diverse types of data stores to support
                   specific business
                   functions. A low latency user profile lookup service will need a high performance and low latency
@@ -143,8 +144,8 @@
               </div>
 
 
-              <div class="py-3">
-                <h3>Time travel </h3>
+              <div class="py-3 wow fadeInRight" data-wow-duration="500ms" data-wow-delay="400ms">
+                <h2 class="font-weight-bold">Time travel </h2>
                 <p>When it comes to predictive accuracy, legacy data is as important as real-time data. The time
                   travel feature
                   allows data scientists and machine learning teams to go back to a specific point in time and
@@ -153,8 +154,8 @@
               </div>
 
 
-              <div class="py-3">
-                <h3>Data Search Engine </h3>
+              <div class="py-3 wow fadeInRight" data-wow-duration="500ms" data-wow-delay="400ms">
+                <h2 class="font-weight-bold">Data Search Engine </h2>
                 <p>The Rubik Marvin enables data access that is as easy as a Google search. Through a simple search
                   format,
                   users are able to ask any questions about the data and receive the right answers in return.</p>
@@ -165,10 +166,10 @@
         <div id="platform" class="tab-pane fade"><br>
           <div class="row">
             <div class="col-12 py-3">
-              <h5 class="text-muted font-weight-bold">ERP Architecture, Draft_v0.5</h5>
+              <h4 class="text-muted font-weight-bold">ERP Architecture, Draft_v0.5</h4>
             </div>
             <div class="col-10">
-              <div class="py-3">
+              <div class="py-3 wow fadeInRight" data-wow-duration="200ms" data-wow-delay="300ms">
                 <img src="./assets/images/marvin-platform.png" class="img-fluid" alt="marvin">
 
               </div>
@@ -176,20 +177,25 @@
           </div>
         </div>
         <div id="applications" class="tab-pane fade"><br>
-          <h5 class="text-muted font-weight-bold">Applications</h5>
+          <h4 class="text-muted font-weight-bold">Applications</h4>
         </div>
         <div id="technologies" class="tab-pane fade"><br>
-          <h5 class="text-muted font-weight-bold">Technologies</h5>
+          <h4 class="text-muted font-weight-bold">Technologies</h5>
         </div>
 
-        <div class="font--courier contact-email-footer">
-          <h4 class="font-weight-bold text-dark mt-5 mb-0 email-text-bottom">Let’s work together.</h4>
-          <h4 class="font-weight-bold m-0 email-text-bottom">Please email</h4>
-          <h4 class="font-weight-bold m-0 email-text-bottom"><a href="mailto:dearkindsirs@rubik.io">dearkindsirs@rubik.io</a></h4>
-        </div>
+
       </div>
     </div>
   </section>
+  <footer class="theam-footer bg-light py-5">
+    <div class="container font--courier contact-email-footer wow fadeIn" data-wow-delay="300ms">
+      <div class="py-5">
+        <h4 class="font-weight-bold text-dark mb-0 email-text-bottom">Let’s work together.</h4>
+        <h4 class="font-weight-bold m-0 email-text-bottom">Please email</h4>
+        <h4 class="font-weight-bold m-0 email-text-bottom"><a href="mailto:hi@rubic.com">hi@rubic.com</a></h4>
+      </div>
+    </div>
+  </footer>
 
   <!----------JS links------->
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
@@ -199,8 +205,8 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1"
     crossorigin="anonymous"></script>
   <script type="text/javascript" src="https://cdn.bootcss.com/typed.js/1.1.4/typed.min.js"></script>
+  <script src="./assets/js/wow.min.js"></script>
   <script type="text/javascript" src="./assets/js/main.js"></script>
-
 </body>
 
 </html>
