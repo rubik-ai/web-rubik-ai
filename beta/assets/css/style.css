@@ -7,8 +7,7 @@ body {
     font-family: 'Open Sans', sans-serif;
     background: #fff;
     font-size: .875rem;
-    overflow: hidden;
-    text-decoration: none;
+    /* overflow: hidden; */
 }
 
 .main-header {
@@ -21,11 +20,16 @@ body {
     width: 100px;
 }
 
+.panel>div {
+    padding-top: 60px;
+}
+
 .page-title-head, .page-title-head:hover {
     line-height: 28px;
     color: #ccc;
     font-size: 18px;
     vertical-align: middle;
+    font-family: Courier, monospace
 }
 
 .menu-sidebar {
@@ -60,6 +64,7 @@ p {
 .section-main-heading {
     font-size: 38px;
     line-height: 48px;
+    height: 48px;
 }
 
 .section-sub-heading {
@@ -87,9 +92,8 @@ p {
 
 .page {
     width: 100%;
-    height: calc(100vh - 60px);
+    min-height: calc(100vh - 60px);
     display: flex;
-    overflow: hidden;
     align-items: center;
 }
 
@@ -107,10 +111,6 @@ p {
 
 .text-gray {
     color: #aeaeae;
-}
-
-.text-red {
-    color: #f00
 }
 
 .page-heading {
@@ -139,6 +139,7 @@ p {
 }
 
 #menuToggle span {
+    box-shadow: 1px 1px 0 #fff;
     display: block;
     width: 16px;
     height: 1px;
@@ -161,6 +162,7 @@ p {
 }
 
 #menuToggle input:checked~span {
+    box-shadow: none;
     opacity: 1;
     transform: rotate(45deg) translate(-5px, -5px);
     background: #ccc;
@@ -272,6 +274,14 @@ p {
     display: none;
 }
 
+.typeahead.dropdown-menu {
+    width: 100%;
+    padding: 0;
+    border-radius: 0;
+}
+.typeahead.dropdown-menu li {
+    line-height: 36px;
+}
 .basic-list-points li {
     line-height: 20px;
     padding: 5px 0;
@@ -363,6 +373,10 @@ p {
     color: #666;
 }
 
+.error-icon--position {
+    top: calc(50% - 135px);
+}
+
 /* media query*/
 
 @media (max-width:768px) {
@@ -411,24 +425,8 @@ p {
     .page-less-content {
         height: auto
     }
-    .section-main-heading {
+    .section-main-heading, .section-sub-heading {
         font-size: 16px;
         line-height: 20px;
-    }
-    .section-sub-heading {
-        color: #BEBEBE;
-        font-size: 16px;
-        line-height: 20px;
-    }
-    .menu-sidebar {
-        height: 100vh;
-        top: 0px;
-    }
-    .page-height-mobile {
-        top: 0 !important;
-        height: 100vh !important;
-    }
-    .page-height-mobile .page {
-        height: 100vh !important;
     }
 }
