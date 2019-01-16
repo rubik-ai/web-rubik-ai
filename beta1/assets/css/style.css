@@ -88,6 +88,7 @@ p {
     top: 80px;
     left: 50px;
     z-index: 0;
+    line-height: .80em;
     font-family: Courier, monospace;
     -webkit-transform: rotate(180deg)translate(200px, 0);
     -moz-transform: rotate(180deg) translate(200px, 0);
@@ -390,15 +391,6 @@ p {
     }
 }
 
-.team-social-list {
-    margin: 0 -10px;
-}
-
-.team-social-list li {
-    padding: 5px 10px;
-    display: inline-block;
-}
-
 .openings-heading {
     padding-top: 25px;
     position: relative;
@@ -418,25 +410,29 @@ p {
     top: calc(50% - 135px);
 }
 
-.marvin-header {
-    background: #333 url(./../images/matrix-code-blue.jpg) no-repeat;
-    background-size: cover;
+.custom-header-bg {
+    background: #111;
     z-index: 9;
     position: relative;
 }
 
+.marvin-header {
+    background-image: url(./../images/matrix-code-blue.jpg);
+    background-size: cover;
+}
+
 .about-us-header {
-    background: url(./../images/about-rubik.jpg) no-repeat;
+    background-image: url(./../images/about-rubik.jpg);
     background-size: cover;
 }
 
 .career-header {
-    background: url(./../images/rubik-career.jpg) no-repeat;
+    background-image: url(./../images/rubik-career.jpg);
     background-size: cover;
 }
 
 .team-header {
-    background: url(./../images/rubik-team.jpg) no-repeat;
+    background-image: url(./../images/rubik-team.jpg);
     background-size: cover;
 }
 
@@ -444,7 +440,7 @@ p {
     font-size: 50px;
 }
 
-.marvin-header::before {
+.custom-header-bg::before {
     content: '';
     position: absolute;
     top: 0;
