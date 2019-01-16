@@ -32,6 +32,10 @@ p {
     background: #ececec;
 }
 
+.text-custom-gray {
+    color: #7a7a7b
+}
+
 .w-83 {
     width: 83%;
 }
@@ -407,7 +411,7 @@ p {
     left: 0;
     top: 10px;
     width: 35px;
-    border-top: 1px solid #eee;
+    border-top: 1px solid #a5a5a5;
 }
 
 .error-icon--position {
@@ -514,16 +518,14 @@ p {
         font-size: 36px;
         line-height: 1em;
     }
-    
-.custom-tab--header li .nav-link.active::before {
-    width: 100%;
-    height: 2px;
-    bottom: 1px;
-    background: #fff;
-    transform: rotate(0deg);
-    left: 0%;
-}
-
+    .custom-tab--header li .nav-link.active::before {
+        width: 100%;
+        height: 2px;
+        bottom: 1px;
+        background: #fff;
+        transform: rotate(0deg);
+        left: 0%;
+    }
 }
 
 @media (max-width:576px) {
