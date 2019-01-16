@@ -414,6 +414,7 @@ p {
     background: #111;
     z-index: 9;
     position: relative;
+    min-height: 60vh;
 }
 
 .marvin-header {
