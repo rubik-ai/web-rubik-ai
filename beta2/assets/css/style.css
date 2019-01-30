@@ -2,7 +2,7 @@
     outline: 0;
     text-decoration: none !important;
 }
-
+body:not(.fold-scroll){scroll-behavior: smooth}
 @font-face {
     font-family: 'HelveticaBd';
     src: url(./../fonts/HelveticaNeueLTStd-Bd.eot) format('eot'), url(./../fonts/HelveticaNeueLTStd-Bd.ttf) format('truetype'), url(./../fonts/HelveticaNeueLTStd-Bd.woff) format('woff');
@@ -22,6 +22,8 @@ body {
     font-family: 'HelveticaRg', sans-serif;
     background: #fff;
     overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing:antialiased;
 }
 
 .container {
@@ -66,7 +68,7 @@ body {
 
 p {
     font-size: 16px;
-    line-height: 1.5em;
+    line-height: 1.9em;
     color: #555;
 }
 
@@ -98,10 +100,6 @@ p {
     background: #111;
 }
 
-.text-white {
-    color: #ececec!important;
-}
-
 .page-heading {
     font-family: 'fontHelveticaBd', sans-serif;
     font-size: 45px;
@@ -127,7 +125,7 @@ p {
     height: 100vh;
     width: 100px;
     display: flex;
-    margin-left: 50px;
+    margin-left: 20px;
     align-items: center;
 }
 
@@ -136,14 +134,17 @@ p {
     margin: 0 0 0 0;
     padding: 0;
     top: 80px;
-    left: 50px;
+    left: 25px;
     min-height: 200px;
+    font-size: 22px;
+    display: flex;
+    align-items: center;
     z-index: 0;
     line-height: .80em;
     font-family: Courier, monospace;
     transform: rotate(180deg) translate(200px, 0);
     transition: transform cubic-bezier(0.77, 0.2, 0.05, 1.0);
-    transition-duration: 2s;
+    transition-duration: .5s;
     writing-mode: tb-rl;
 }
 
@@ -153,7 +154,7 @@ p {
 
 .appear.page-title-head {
     transform: rotate(180deg) translate(0, 0);
-    transition-duration: 2s;
+    transition-duration: .7s;
 }
 
 .collapse.navbar-collapse.show {
@@ -181,7 +182,7 @@ p {
     line-height: 36px;
     width: 22px;
     margin-left: -15px;
-    background: rgba(0, 0, 0, .12);
+    background: rgba(0, 0, 0, .08);
     border-radius: 50px;
     -webkit-animation: 3s arrow infinite ease;
     animation: 3s arrow infinite ease;
@@ -189,7 +190,7 @@ p {
 
 @-webkit-keyframes arrow {
     0%, 100% {
-        bottom: 50px;
+        bottom: 40px;
     }
     50% {
         bottom: 30px;
@@ -198,7 +199,7 @@ p {
 
 @keyframes arrow {
     0%, 100% {
-        bottom: 50px;
+        bottom: 40px;
     }
     50% {
         bottom: 30px;
@@ -217,17 +218,67 @@ p {
     display: block;
     position: relative;
     z-index: 1;
+    width: 26px;
+    padding:1px 5px;
     -webkit-user-select: none;
     user-select: none;
-}
+    background: none;
+    border: 0;
+    box-sizing: border-box;
+  }
+  #menuToggle::before, #menuToggle::after {
+    box-sizing: inherit;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+  #menuToggle::before, #menuToggle::after {
+    border: 1px solid transparent;
+    width: 0;
+    height: 0;
+  }
+  #menuToggle::before {
+    top: 0;
+    left: 0;
+  }
+  #menuToggle::after {
+    bottom: 0;
+    right: 0;
+  }
+  #menuToggle:hover::before, #menuToggle:hover::after {
+    width: 100%;
+    height: 100%;
+  }
+  #menuToggle:hover::before {
+    border-top-color: #111;
+    border-right-color: #111;
+    transition: width 0.09s ease-out, height 0.09s ease-out 0.09s;
+  }
+  #menuToggle:hover::after {
+    border-bottom-color: #111;
+    border-left-color: #111;
+    transition: border-color 0s ease-out 0.18s, width 0.09s ease-out 0.09s, height 0.18s ease-out 0.09s;
+  }
+  
+
+
+
+
+
+
+
+
+
+
 
 #menuToggle input {
     display: block;
-    width: 40px;
-    height: 32px;
+    width: 100%;
+    height: 100%;
     position: absolute;
-    top: -7px;
-    left: -5px;
+    top: 0px;
+    left: 0px;
     cursor: pointer;
     opacity: 0;
     z-index: 2;
@@ -235,17 +286,20 @@ p {
 }
 
 #menuToggle span {
-    /* box-shadow: 1px 1px 0 #fff; */
+    box-shadow: 0px 1px 0 #fff;
     display: block;
     width: 16px;
     height: 1px;
-    margin-bottom: 5px;
+    margin: 5px 0;
     position: relative;
     background: #111;
     border-radius: 3px;
     z-index: 1;
     transform-origin: -1px 0px;
-    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0), background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0), opacity 0.55s ease;
+    -webkit-transition: transform 0.3s cubic-bezier(0.6, 0.2, 0.1, 1);
+    -moz-transition: transform 0.3s cubic-bezier(0.6, 0.2, 0.1, 1);
+    -o-transition: transform 0.3s cubic-bezier(0.6, 0.2, 0.1, 1);
+    transition: transform 0.3s cubic-bezier(0.6, 0.2, 0.1, 1);
 }
 
 #menuToggle span:first-child {
@@ -397,7 +451,7 @@ p {
 }
 
 .basic-list-points li {
-    line-height: 20px;
+    line-height: 1.9em;
     padding: 5px 0;
 }
 
@@ -407,7 +461,6 @@ p {
 
 .blinking-cursor {
     color: transparent;
-    background: #bebebe;
     border-radius: 7px;
     margin-left: 0px;
     width: 13px;
@@ -428,42 +481,6 @@ p {
     }
 }
 
-@-moz-keyframes blink {
-    from, to {
-        border-color: transparent;
-    }
-    50% {
-        border-color: #BEBEBE;
-    }
-}
-
-@-webkit-keyframes blink {
-    from, to {
-        border-color: transparent;
-    }
-    50% {
-        border-color: #BEBEBE;
-    }
-}
-
-@-ms-keyframes blink {
-    from, to {
-        border-color: transparent;
-    }
-    50% {
-        border-color: #BEBEBE;
-    }
-}
-
-@-o-keyframes blink {
-    from, to {
-        border-color: transparent;
-    }
-    50% {
-        border-color: #BEBEBE;
-    }
-}
-
 .openings-heading {
     padding-top: 25px;
     position: relative;
@@ -476,48 +493,44 @@ p {
     left: 0;
     top: 10px;
     width: 35px;
-    border-top: 1px solid rgba(255, 255, 255, 0.19);
+    border-top: 1px solid rgba(255, 255, 255, 0.35);
 }
 
 .openings-block--blue {
-    color: #95f2fc;
-    background: #338fd0;
+    background: #19A4FD;
 }
 
 .openings-block--green {
     background: #45cd89;
-    color: #b0ffd8
 }
 
-.openings-block--violet {
-    background: #6d0d5d;
-    color: #d098c6
+.openings-block--pink {
+    background: #cc2370;
 }
 
 .openings-block--teal {
-    background: #89cbb8;
-    color: #b9ffeb;
+    background: #20C6B7;
 }
 
 .openings-block--orange {
     background: #f79e0f;
-    color: #ffe69b;
 }
 
-.openings-block--peach {
-    background: #83a8fe;
-    color: #dee8ff;
+.openings-block--sky-blue {
+    background: #6793fb;
 }
 
 .error-icon--position {
     top: calc(50% - 135px);
 }
+
 .custom-header-bg {
     background: #111;
     z-index: 9;
     position: relative;
     min-height: 60vh;
 }
+
 .contact-header {
     background-image: url(./../images/about-rubik.jpg);
     background-size: cover;

@@ -2,12 +2,12 @@ $(function () {
 	$.scrollify({
 		section: ".panel",
 		//sectionName:false,
-		scrollSpeed: 1100,
+		scrollSpeed: 500,
 		after: function (i) {
 		}
 	});
 
-	$(".scroll,.scroll-btn").click(function (e) {
+	$(".scroll-btn").click(function (e) {
 		e.preventDefault();
 
 		$.scrollify.next();
@@ -20,13 +20,13 @@ $(function () {
 		section: ".panel",
 		after: function () {
 			if (window.location.hash === "#why-us") {
-				document.getElementById("head-title").innerHTML = "why us";
+				document.getElementById("head-title").innerHTML = "why?";
 			}
 			else if (window.location.hash === "#product") {
 				document.getElementById("head-title").innerHTML = "product";
 			}
 			else if (window.location.hash === "#career") {
-				document.getElementById("head-title").innerHTML = "career";
+				document.getElementById("head-title").innerHTML = "careers";
 			}
 			else {
 				document.getElementById("head-title").innerHTML = "";
@@ -37,13 +37,13 @@ $(function () {
 
 $(document).ready(function () {
 	if (window.location.hash === "#why-us") {
-		document.getElementById("head-title").innerHTML = "why us";
+		document.getElementById("head-title").innerHTML = "why?";
 	}
 	else if (window.location.hash === "#product") {
 		document.getElementById("head-title").innerHTML = "product";
 	}
 	else if (window.location.hash === "#career") {
-		document.getElementById("head-title").innerHTML = "career";
+		document.getElementById("head-title").innerHTML = "careers";
 	}
 	else {
 		document.getElementById("head-title").innerHTML = "";
