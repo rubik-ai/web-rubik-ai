@@ -29,7 +29,7 @@ $(function () {
 				document.getElementById("head-title").innerHTML = "careers";
 			}
 			else {
-				document.getElementById("head-title").innerHTML = "";
+				document.getElementById("head-title").innerHTML = " ";
 			}
 		}
 	});
@@ -46,7 +46,7 @@ $(document).ready(function () {
 		document.getElementById("head-title").innerHTML = "careers";
 	}
 	else {
-		document.getElementById("head-title").innerHTML = "";
+		document.getElementById("head-title").innerHTML = " ";
 	}
 });
 
@@ -55,7 +55,7 @@ $(window).scroll(function () {
 	if (height > 150) {
 		$(".scroll-more").css("visibility", "hidden");
 	};
-	
+
 	//vertical text in sidebar
 	if (height > 250) {
 		$(".page-title-head").addClass("appear");
@@ -68,7 +68,7 @@ $(window).scroll(function () {
 
 //toggle menu of click
 $("#menu a").click(function () {
-	var checkBoxes = $("#menuToggle input");
+	var checkBoxes = $("input[type='checkbox']");
 	checkBoxes.prop("checked", !checkBoxes.prop("checked"));
 });
 

@@ -7,7 +7,6 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
   <!--Favicon-->
   <link rel="apple-touch-icon" sizes="57x57" href="./assets/favicon/apple-icon-57x57.png">
   <link rel="apple-touch-icon" sizes="60x60" href="./assets/favicon/apple-icon-60x60.png">
@@ -26,6 +25,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="msapplication-TileImage" content="./assets/favicon/ms-icon-144x144.png">
   <meta name="theme-color" content="#ffffff">
+
   <!----------CSS links------->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
     crossorigin="anonymous">
@@ -34,7 +34,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css" />
 
 
-  <!----------JS links------->
   <!----------JS links------->
   <script src="./assets/js/jquery-2.2.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollify/1.0.19/jquery.scrollify.js"></script>
@@ -70,7 +69,6 @@
             <li class="social-media-links">
               <div class="font--source-sans-pro">
                 <h6 class="text-white">You may find us on</h6>
-
                 <ul class="p-0 social-links">
                   <li class="text-muted"><a href="https://twitter.com/rubik_ai_" target=_blank>Twitter</a></li>
                   <li class="text-muted"><a href="https://www.linkedin.com/company/rubik-ai/about/" target=_blank>Twitter</a></li>
@@ -83,10 +81,9 @@
       </div>
     </nav>
     <h5 class="font--courier-bold m-0 page-title-head"><a href="index.html"><img src="./assets/images/rubik_vertical_logo.png"
-          alt="rubik_" class="img-fluid"></a><span>about</span></h5>
+          alt="rubik_" class="img-fluid"></a><span>product</span></h5>
   </div>
-
-  <header class="custom-header-bg about-us-header d-flex flex-column">
+  <header class="custom-header-bg marvin-header d-flex flex-column">
     <div class="container wow fadeIn">
       <a class="navbar-brand mr-0 pt-5" href="index.html">
         <img src="./assets/images/rubik_logo_white.png" class="img-fluid" />
@@ -94,23 +91,32 @@
     </div>
     <div class="container my-auto wow fadeIn">
       <div class="py-5 text-white">
-        <h1 class="font--courier-bold custom-header-heading">About </h1>
-        <p class="mt-4 w-sm-75 text-white">We help enterprises make better data-driven
-          decisions by
-          democratizing access
-          to one of the most important assets in the 21st Century</p>
+        <h1 class="font--courier-bold custom-header-heading">Marvin</h1>
+        <p class="mt-4 w-sm-75 text-white">The Rubik Marvin platform securely ingests,
+          processes,
+          explores and distributes
+          enterprise data. Rubik Marvin serves as a single and unified enterprise data platform
+          that will make sense of your disparate data sets by preparing and presenting them in
+          formats that are tailored to your specific needs and objectives. This allows everyone
+          within your enterprise to deploy data-driven decision making.</p>
       </div>
     </div>
     <div class="container wow fadeIn">
-      <ul class="nav nav-tabs custom-tab--header border-0">
+      <ul class="nav nav-tabs custom-tab--header border-0" role="tablist">
         <li class="nav-item">
-          <a class="nav-link active" href="./about.html">About</a>
+          <a class="nav-link" href="./product.html">Overview</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="./team.html">Team</a>
+          <a class="nav-link active" href="./marvin-specs.html">Marvin Specs</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="./careers.html">Careers</a>
+          <a class="nav-link" href="./platform.html">Platform</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./product-application.html">Applications</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./technologies.html">Technologies</a>
         </li>
       </ul>
     </div>
@@ -119,32 +125,80 @@
 
   <section class="wrapper-section py-5">
     <div class="container">
-      <div class="py-5 wow fadeIn" data-wow-duration="200ms" data-wow-delay="300ms">
+      <div class="pt-5">
         <div class="row">
-          <div class="col-md-6">
-            <p>Driven by a love for data, and sharing a vision of data’s ability to
-              transform organizations, our co-founders, Srujan and Animesh,
-              launched Rubik. The initial concept for Rubik began with the
-              realization that enterprise-wide data access has been siloed. Data
-              engineers and database administrators have been the longstanding
-              data gatekeepers who funneled data to analysts and data scientists.</p>
-            <p>Rubik aims to change that.</p>
+          <div class="col-md-3">
+            <h4 class="text-muted font--helvetica-bold wow fadeIn" data-wow-duration="200ms" data-wow-delay="200ms">Marvin
+              specs</h4>
           </div>
-          <div class="col-md-6">
-            <p>We believe that widespread enterprise access to data unlocks
-              greater insight than is currently available through traditionally
-              structured data flows. Greater insight equals tremendous growth and
-              innovation. When all employees, irrespective of their technical skills
-              or background, are able to easily explore and analyze enterprise
-              data, then both productivity and market expansion are realized at a
-              faster pace.</p>
+          <div class="col-md-9">
+            <div class="wow fadeInRight" data-wow-duration="500ms" data-wow-delay="200ms">
+              <h2 class="font--helvetica-bold">Config-driven data integration </h2>
+              <p>We understand the need for teams to be able to ingest ad-hoc data sources in addition to the
+                regularized internal
+                and external data inflows. In order to make this process efficient, Rubik Marvin provides
+                uncomplicated channels
+                for all platform users to retrieve new datasets and perform ad-hoc analyses. This is achieved by
+                surfacing generic
+                connectors that can be conveniently configured and re-used for data ingestion. This reduces the
+                need to involve
+                the product engineering teams in operational tasks and have them focus on more important core
+                platform work.</p>
+            </div>
+
+
+            <div class="py-3 wow fadeInRight" data-wow-duration="500ms" data-wow-delay="400ms">
+              <h2 class="font--helvetica-bold">Operational flexibility </h2>
+              <p>We strongly believe that operational flexibility is what differentiates a good data platform from
+                a great one. This
+                starts with being able to immediately identify data quality issues and anomalies as close to the
+                ingestion source
+                as possible. The Rubik Marvin platform comes equipped with a suite of support tools to enable the
+                ease of
+                operations that are key to the success of any enterprise-grade software.</p>
+            </div>
+
+
+
+            <div class="py-3 wow fadeInRight" data-wow-duration="500ms" data-wow-delay="400ms">
+              <h2 class="font--helvetica-bold">Pipeline as the source of truth </h2>
+              <p>Different applications across an enterprise require diverse types of data stores to support
+                specific business
+                functions. A low latency user profile lookup service will need a high performance and low latency
+                data store like
+                Aerospike while an application that does financial reporting might need a data warehouse or an
+                RDBMS.</p>
+              <p>Rubik Marvin uses a patent pending ‘pipeline as a source of truth’ approach to making this
+                platform truly
+                database agnostic. Users can write simple consumer jobs to retrieve data and its mutations at the
+                most granular
+                level and spin up any sort of database that is relevant to their specific applications.</p>
+            </div>
+
+
+            <div class="py-3 wow fadeInRight" data-wow-duration="500ms" data-wow-delay="400ms">
+              <h2 class="font--helvetica-bold">Time travel </h2>
+              <p>When it comes to predictive accuracy, legacy data is as important as real-time data. The time
+                travel feature
+                allows data scientists and machine learning teams to go back to a specific point in time and
+                retrieve the value of
+                a particular attribute to allow for more effective model building and predictions.</p>
+            </div>
+
+
+            <div class="py-3 wow fadeInRight" data-wow-duration="500ms" data-wow-delay="400ms">
+              <h2 class="font--helvetica-bold">Data Search Engine </h2>
+              <p>The Rubik Marvin enables data access that is as easy as a Google search. Through a simple search
+                format,
+                users are able to ask any questions about the data and receive the right answers in return.</p>
+            </div>
           </div>
         </div>
+
+
       </div>
     </div>
   </section>
-
-
   <footer class="theam-footer bg-light py-5">
     <div class="container contact-email-footer wow fadeIn" data-wow-delay="300ms">
       <div class="py-5">
@@ -154,7 +208,6 @@
       </div>
     </div>
   </footer>
-
 </body>
 
 </html>

@@ -2,7 +2,11 @@
     outline: 0;
     text-decoration: none !important;
 }
-body:not(.fold-scroll){scroll-behavior: smooth}
+
+body:not(.fold-scroll) {
+    scroll-behavior: smooth
+}
+
 @font-face {
     font-family: 'HelveticaBd';
     src: url(./../fonts/HelveticaNeueLTStd-Bd.eot) format('eot'), url(./../fonts/HelveticaNeueLTStd-Bd.ttf) format('truetype'), url(./../fonts/HelveticaNeueLTStd-Bd.woff) format('woff');
@@ -23,7 +27,7 @@ body {
     background: #fff;
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
-    -moz-font-smoothing:antialiased;
+    -moz-font-smoothing: antialiased;
 }
 
 .container {
@@ -113,7 +117,6 @@ p {
 
 .main-header {
     z-index: 99;
-    height: 60px;
 }
 
 .navbar-brand {
@@ -156,7 +159,6 @@ p {
     transform: rotate(180deg) translate(0, 0);
     transition-duration: .7s;
 }
-
 .collapse.navbar-collapse.show {
     position: fixed;
     z-index: 999;
@@ -219,58 +221,54 @@ p {
     position: relative;
     z-index: 1;
     width: 26px;
-    padding:1px 5px;
+    padding: 1px 5px;
     -webkit-user-select: none;
     user-select: none;
     background: none;
     border: 0;
     box-sizing: border-box;
-  }
-  #menuToggle::before, #menuToggle::after {
+}
+
+#menuToggle::before, #menuToggle::after {
     box-sizing: inherit;
     content: '';
     position: absolute;
     width: 100%;
     height: 100%;
-  }
-  #menuToggle::before, #menuToggle::after {
+}
+
+#menuToggle::before, #menuToggle::after {
     border: 1px solid transparent;
     width: 0;
     height: 0;
-  }
-  #menuToggle::before {
+}
+
+#menuToggle::before {
     top: 0;
     left: 0;
-  }
-  #menuToggle::after {
+}
+
+#menuToggle::after {
     bottom: 0;
     right: 0;
-  }
-  #menuToggle:hover::before, #menuToggle:hover::after {
+}
+
+#menuToggle:hover::before, #menuToggle:hover::after {
     width: 100%;
     height: 100%;
-  }
-  #menuToggle:hover::before {
+}
+
+#menuToggle:hover::before {
     border-top-color: #111;
     border-right-color: #111;
-    transition: width 0.09s ease-out, height 0.09s ease-out 0.09s;
-  }
-  #menuToggle:hover::after {
+    transition: width 0.15s ease-out, height 0.15s ease-out 0.15s;
+}
+
+#menuToggle:hover::after {
     border-bottom-color: #111;
     border-left-color: #111;
-    transition: border-color 0s ease-out 0.18s, width 0.09s ease-out 0.09s, height 0.18s ease-out 0.09s;
-  }
-  
-
-
-
-
-
-
-
-
-
-
+    transition: border-color 0s ease-out 0.30s, width 0.15s ease-out 0.15s, height 0.30s ease-out 0.15s;
+}
 
 #menuToggle input {
     display: block;
@@ -480,6 +478,74 @@ p {
         background: #BEBEBE;
     }
 }
+
+/* know more link */
+
+.link-know-more {
+    background: none;
+    border: 0;
+    box-sizing: border-box;
+    display: inline-block;
+    position: relative;
+    width: 25px;
+    line-height: 25px;
+    text-align: center;
+    color: #19A4FD;
+}
+
+.link-know-more::before, .link-know-more::after {
+    box-sizing: inherit;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.link-know-more:hover {
+    color: #19A4FD;
+}
+
+.link-know-more::before, .link-know-more::after {
+    top: 0;
+    left: 0;
+}
+
+.link-know-more::before {
+    border: 1px solid transparent;
+}
+
+.link-know-more:hover::before {
+    border-top-color: #19A4FD;
+    border-right-color: #19A4FD;
+    border-bottom-color: #19A4FD;
+    transition: border-top-color 0.15s linear, border-right-color 0.15s linear 0.1s, border-bottom-color 0.15s linear 0.2s;
+}
+
+.link-know-more::after {
+    border: 0 solid transparent;
+}
+
+.link-know-more:hover::after {
+    border-top: 1px solid #19A4FD;
+    border-left-width: 1px;
+    border-right-width: 1px;
+    -webkit-transform: rotate(270deg);
+    transform: rotate(270deg);
+    transition: border-left-width 0s linear 0.35s, -webkit-transform 0.4s linear 0s;
+    transition: transform 0.4s linear 0s, border-left-width 0s linear 0.35s;
+    transition: transform 0.4s linear 0s, border-left-width 0s linear 0.35s, -webkit-transform 0.4s linear 0s;
+}
+
+.link-know-more {
+    border-radius: 100%;
+    box-shadow: none;
+}
+
+.link-know-more::before, .link-know-more::after {
+    border-radius: 100%;
+}
+
+/* .know more link */
 
 .openings-heading {
     padding-top: 25px;
