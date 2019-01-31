@@ -42,6 +42,7 @@ body {
 .font--courier-bold {
     font-family: Courier, monospace;
     font-weight: bold;
+    letter-spacing: -0.5px;
 }
 
 .h2, h2 {
@@ -159,6 +160,7 @@ p {
     transform: rotate(180deg) translate(0, 0);
     transition-duration: .7s;
 }
+
 .collapse.navbar-collapse.show {
     position: fixed;
     z-index: 999;
@@ -210,9 +212,8 @@ p {
 
 .page {
     width: 100%;
-    height: calc(100vh - 0px);
+    min-height: 100vh;
     display: flex;
-    overflow: hidden;
     align-items: center;
 }
 
@@ -221,7 +222,7 @@ p {
     position: relative;
     z-index: 1;
     width: 26px;
-    padding: 5px;
+    padding: 1px 5px;
     -webkit-user-select: none;
     user-select: none;
     background: none;
@@ -288,6 +289,7 @@ p {
     display: block;
     width: 16px;
     height: 1px;
+    margin: 5px 0;
     position: relative;
     background: #111;
     border-radius: 3px;
@@ -314,9 +316,6 @@ p {
     opacity: 0;
     transform: rotate(0deg) scale(0.2, 0.2);
 }
-#menuToggle span:nth-last-child(3) {
-    margin: 5px 0
-}
 
 #menuToggle input:checked~span:nth-last-child(2) {
     transform: rotate(-45deg) translate(-1px, -2px);
@@ -325,7 +324,6 @@ p {
 #menu {
     position: fixed;
     left: 0;
-    padding: 20px 120px;
     top: 0px;
     width: 100%;
     bottom: 0px;
@@ -461,15 +459,19 @@ p {
 
 .blinking-cursor {
     color: transparent;
-    border-radius: 7px;
+    border-radius: 15px;
     margin-left: 0px;
-    width: 13px;
+    width: 16px;
     height: 4px;
     -webkit-animation: .8s blink step-end infinite;
     -moz-animation: .8s blink step-end infinite;
     -ms-animation: .8s blink step-end infinite;
     -o-animation: .8s blink step-end infinite;
     animation: .8s blink step-end infinite;
+}
+
+.mac.webkit .blinking-cursor {
+    height: 5px;
 }
 
 @keyframes blink {
@@ -699,6 +701,13 @@ p {
         font-size: 36px;
         line-height: 1em;
     }
+    .blinking-cursor {
+        width: 13px;
+        height: 3px;
+    }
+    .mac.webkit .blinking-cursor {
+        height: 4px;
+    }
     .custom-tab--header {
         justify-content: center
     }
@@ -720,11 +729,11 @@ p {
         width: auto;
     }
     .page-title-head {
-        left: 15px
+        left: 15px;
+        top: 40px;
     }
     #menu .menu-main-links li {
-        font-size: 50px;
-        line-height: 55px;
+        font-size: 32px;
     }
     .menu-sidebar {
         margin-left: 15px;
@@ -739,15 +748,18 @@ p {
     .page-heading {
         font-size: 2.1rem;
     }
-    #menu {
-        padding: 15px 0
-    }
     .email-text-bottom {
         font-size: 26px;
         line-height: 1.1em;
     }
     .section-main-heading, .section-sub-heading {
         font-size: 22px;
-        line-height: .75em;
+    }
+    .blinking-cursor {
+        width: 10px;
+        height: 2px;
+    }
+    .mac.webkit .blinking-cursor {
+        height: 3px;
     }
 }
