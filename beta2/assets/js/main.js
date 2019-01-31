@@ -19,7 +19,7 @@ $(function () {
 	$.scrollify({
 		section: ".panel",
 		after: function () {
-			if (window.location.hash === "#why-us") {
+			if (window.location.hash === "#why") {
 				document.getElementById("head-title").innerHTML = "why?";
 			}
 			else if (window.location.hash === "#product") {
@@ -29,14 +29,14 @@ $(function () {
 				document.getElementById("head-title").innerHTML = "careers";
 			}
 			else {
-				document.getElementById("head-title").innerHTML = " ";
+				''
 			}
 		}
 	});
 });
 
 $(document).ready(function () {
-	if (window.location.hash === "#why-us") {
+	if (window.location.hash === "#why") {
 		document.getElementById("head-title").innerHTML = "why?";
 	}
 	else if (window.location.hash === "#product") {
@@ -46,7 +46,7 @@ $(document).ready(function () {
 		document.getElementById("head-title").innerHTML = "careers";
 	}
 	else {
-		document.getElementById("head-title").innerHTML = " ";
+		''
 	}
 });
 
@@ -65,13 +65,10 @@ $(window).scroll(function () {
 });
 
 
-
-//toggle menu of click
-$("#menu a").click(function () {
-	var checkBoxes = $("input[type='checkbox']");
-	checkBoxes.prop("checked", !checkBoxes.prop("checked"));
-});
-
-
 //
 new WOW().init();
+//toggle menu of click
+$("#menu a").click(function () {
+	var checkBoxes = $("input");
+	checkBoxes.attr('checked', !checkBoxes.is(':checked'));
+});
