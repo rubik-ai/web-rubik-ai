@@ -28,6 +28,9 @@ $(function () {
 			else if (window.location.hash === "#career") {
 				document.getElementById("head-title").innerHTML = "careers";
 			}
+			else if (window.location.hash === "#contact") {
+				document.getElementById("head-title").innerHTML = "contact";
+			}
 			else {
 				''
 			}
@@ -45,9 +48,18 @@ $(document).ready(function () {
 	else if (window.location.hash === "#career") {
 		document.getElementById("head-title").innerHTML = "careers";
 	}
+	else if (window.location.hash === "#contact") {
+		document.getElementById("head-title").innerHTML = "contact";
+	}
 	else {
 		''
 	}
+
+	//toggle menu of click
+	$("#menu a").click(function () {
+		var checkBoxes = $("input");
+		checkBoxes.prop("checked", !checkBoxes.prop("checked"));
+	});
 });
 
 $(window).scroll(function () {
@@ -67,8 +79,3 @@ $(window).scroll(function () {
 
 //
 new WOW().init();
-//toggle menu of click
-$("#menu a").click(function () {
-	var checkBoxes = $("input");
-	checkBoxes.attr('checked', !checkBoxes.is(':checked'));
-});

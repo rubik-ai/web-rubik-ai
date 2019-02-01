@@ -4,7 +4,7 @@ $(window).scroll(function () {
 	if (height > 150) {
 		$(".scroll-more").css("visibility", "hidden");
 	};
-	
+
 	//vertical text in sidebar
 	if (height > 50) {
 		$(".page-title-head").addClass("appear");
@@ -13,13 +13,13 @@ $(window).scroll(function () {
 
 });
 
-
-
 //toggle menu of click
-$("#menu a").click(function () {
-	var checkBoxes = $("#menuToggle input");
-	checkBoxes.prop("checked", !checkBoxes.prop("checked"));
-});
+$(document).ready(function () {
+	$("#menu a").click(function () {
+		var checkBoxes = $("#menuToggle input");
+		checkBoxes.prop("checked", !checkBoxes.prop("checked"));
+	});
+})
 
 
 //

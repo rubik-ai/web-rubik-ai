@@ -49,7 +49,7 @@
     <div class="menu-sidebar position-fixed vertical-align">
         <nav role="navigation">
             <div id="menuToggle">
-                <input type="checkbox"/>
+                <input type="checkbox" id="openClose" />
                 <span></span>
                 <span></span>
                 <span></span>
@@ -65,7 +65,7 @@
                                 <li><a href="./contact.html">Contact</a></li>
                             </ul>
                         </li>
-                        <li class="social-media-links">
+                        <li class="social-media-links pb-3">
                             <div class="font--source-sans-pro">
                                 <h6 class="text-white">You may find us on</h6>
 
@@ -84,6 +84,7 @@
         <h5 class="font--courier-bold m-0 page-title-head"><a href="index.html"><img src="./assets/images/rubik_vertical_logo.svg"
                     alt="rubik_" class="img-fluid"></a><span id="head-title"></span></h5>
     </div>
+
     <header class="main-header position-absolute w-100">
         <div class="container">
             <a class="navbar-brand mr-0 pt-5" href="index.html">
@@ -146,7 +147,7 @@
                                     World</h2>
                                 <div class="row">
                                     <div class="col-lg-12">
-                                        <p class="m-0 pb-4">The Rubik Marvin platform
+                                        <p class="m-0 pb-0">The Rubik Marvin platform
                                             securely
                                             ingests,
                                             processes, explores and distributes
@@ -160,8 +161,10 @@
                                             This
                                             allows everyone within
                                             your enterprise to
-                                            deploy data-driven decision making...<a href="./product.html" class="ml-1 link-know-more"><i
-                                                    class="fa fa-angle-right fa-fw"></i></a></p>
+                                            deploy data-driven decision making...</p>
+
+                                        <p class="text-right mb-4"><a href="./product.html" class="learn-more-link"><span>Learn
+                                                    more</span><i class="fa fa-angle-right fa-fw"></i></a></p>
                                     </div>
                                 </div>
                             </div>
@@ -196,8 +199,8 @@
                                             We’d love your help.
 
                                         </p>
-                                        <p class="text-right mb-4"><a href="./careers.html" class="ml-1 link-know-more"><i
-                                                    class="fa fa-angle-right fa-fw"></i></a></p>
+                                        <p class="text-right mb-4"><a href="./careers.html" class="learn-more-link"><span>Learn
+                                                    more</span><i class="fa fa-angle-right fa-fw"></i></a></p>
                                     </div>
                                 </div>
                             </div>
@@ -207,15 +210,35 @@
             </div>
         </div>
     </section>
-    <footer class="theam-footer bg-light py-5">
-        <div class="container contact-email-footer wow fadeIn" data-wow-delay="300ms">
-            <div class="py-5">
-                <h4 class="font--courier-bold text-dark mb-0 email-text-bottom">Let’s work together.</h4>
-                <h4 class="font--courier-bold m-0 email-text-bottom">Please email</h4>
-                <h4 class="font--courier-bold m-0 email-text-bottom"><a href="mailto:hi@rubik.com">hi@rubik.com</a></h4>
+    <section class="panel" data-section-name="contact" id="contact">
+        <div class="page wow fadeIn">
+            <div class="container contact-email-footer">
+                <div class="py-5">
+                    <div>
+                        <h4 class="font--courier-bold text-dark mb-0 email-text-bottom">Intrigued?
+                            Thought so.</h4>
+                        <h4 class="font--courier-bold m-0 email-text-bottom">Please email</h4>
+                        <h4 class="font--courier-bold m-0 email-text-bottom"><a href="mailto:hi@rubik.ai">hi@rubik.ai</a></h4>
+                    </div>
+                    <div class="row my-5 py-5">
+                        <div class="col-lg-4 d-flex vertical-align">
+                            <h5 class="font--helvetica-bold m-0">Learn more about us</h5>
+                        </div>
+                        <div class="col-lg-8">
+                            <ul class="footer-page-links p-0 mt-3 my-lg-0">
+                                <li><a href="./index.html#why">Why Rubik?</a></li>
+                                <li><a href="./product.html">Product</a></li>
+                                <li><a href="./about.html">About</a></li>
+                                <li><a href="./careers.html">Careers</a></li>
+                                <li><a href="./contact.html">Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <span class="small text-copyright">&copy; 2019 Rubik</span>
+                </div>
             </div>
         </div>
-    </footer>
+    </section>
 
 
 
