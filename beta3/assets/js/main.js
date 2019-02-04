@@ -60,6 +60,8 @@ $(document).ready(function () {
 		var checkBoxes = $("input");
 		checkBoxes.prop("checked", !checkBoxes.prop("checked"));
 	});
+
+	$('[data-toggle="tooltip"]').tooltip(); 
 });
 
 $(window).scroll(function () {
