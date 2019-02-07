@@ -98,7 +98,7 @@ p {
 }
 
 .h-100vh {
-    height: 100vh;
+    min-height: 100vh;
 }
 
 .content-section-dark {
@@ -300,7 +300,7 @@ p {
 }
 
 #menuToggle span {
-    box-shadow: 0px 1px 0 #fff;
+    box-shadow: 0px 2px 0 #fff;
     display: block;
     width: 18px;
     height: 2px;
@@ -418,25 +418,16 @@ p {
     color: #ccc
 }
 
+#menu li a:hover {
+    color: #fff;
+}
+
 #menu li .social-links li {
     font-size: 16px;
     line-height: 22px;
     position: relative;
     display: inline-block;
     font-weight: normal;
-}
-
-#menu li .social-links li a:hover {
-    display: inline-block;
-    transition-duration: 0.3s;
-    -webkit-transform: scale(.95) translateX(0px) translateY(0px);
-    -moz-transform: scale(.95) translateX(0px) translateY(0px);
-    -o-transform: scale(.95) translateX(0px) translateY(0px);
-    transform: scale(.95) translateX(0px) translateY(0px);
-}
-
-#menu li a:hover {
-    color: #fff;
 }
 
 #menu li .social-links li:not(:last-child)::after {
@@ -487,28 +478,12 @@ p {
 .learn-more-link span:hover::before {
     -webkit-transform: scale3d(1, 1, 1);
     transform: scale3d(1, 1, 1);
-    transition: -webkit-transform 0.2s;
-    transition: transform 0.2s;
-    transition: transform 0.2s, -webkit-transform 0.2s;
+    transition: -webkit-transform 0.4s;
+    transition: transform 0.4s;
+    transition: transform 0.4s, -webkit-transform 0.4s;
 }
 
 /*.learn more*/
-
-.list-separate-points li {
-    display: inline-block;
-    position: relative;
-    margin-right: 10px;
-    padding-right: 10px;
-}
-
-.list-separate-points li:not(:last-child)::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    border-right: 1px solid #ccc;
-    height: 100%;
-}
 
 .basic-list-points li {
     line-height: 1.9em;
@@ -676,6 +651,20 @@ p {
     left: calc(50% - 11px);
 }
 
+.grayscale-effect {
+    filter: grayscale(100%);
+    transition-property: -moz-filter, -ms-filter, -o-filter, -webkit-filter, filter;
+    transition-duration: 1s
+}
+
+.grayscale-effect:hover {
+    filter: grayscale(0%);
+}
+
+.contact-h-100vh {
+    min-height: 100vh
+}
+
 .email-text-bottom {
     font-size: 46px;
     line-height: 1.2em;
@@ -684,7 +673,8 @@ p {
 .email-text-bottom, .email-text-bottom a {
     color: #ccc;
 }
-.email-text-bottom a:hover{
+
+.email-text-bottom a:hover {
     color: #aaa;
 }
 
@@ -696,31 +686,59 @@ p {
 .footer-page-links li {
     list-style-type: none;
     display: inline-block;
-    padding: 0 14px;
     font-size: 18px;
     position: relative;
-}
-
-.footer-page-links li a {
-    color: #707070;
-    font-family: 'helveticaRg'
 }
 
 .footer-page-links li:not(:last-child)::after {
     content: '/';
     position: absolute;
-    right: -7px;
     color: #DBDBDB;
+    right: -4px;
+}
+
+.footer-page-links li a {
+    color: #707070;
+    font-family: 'helveticaRg';
+    margin: 0 14px;
+    position: relative;
+    display: inline-block;
 }
 
 .footer-page-links li a:hover {
     display: inline-block;
     color: #0056b3;
-    transition-duration: 0.3s;
-    -webkit-transform: scale(.95)translateX(0px) translateY(0px);
-    -moz-transform: scale(.95) translateX(0px) translateY(0px);
-    -o-transform: scale(.95) translateX(0px) translateY(0px);
-    transform: scale(.95) translateX(0px) translateY(0px);
+}
+
+.footer-page-links li a::before, button::after {
+    box-sizing: inherit;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.footer-page-links li a::before, .footer-page-links li a::after {
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    -webkit-transform-origin: center;
+    transform-origin: center;
+}
+
+.footer-page-links li a::before {
+    border-bottom: 1px solid #0070c9;
+    -webkit-transform: scale3d(0, 1, 1);
+    transform: scale3d(0, 1, 1);
+}
+
+.footer-page-links li a:hover::before {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+    transition: -webkit-transform 0.4s;
+    transition: transform 0.4s;
+    transition: transform 0.4s, -webkit-transform 0.4s;
 }
 
 .text-copyright {
@@ -731,7 +749,8 @@ p {
     font-size: 14px;
     color: #666
 }
-.contact-details > div:hover h6{
+
+.contact-details>div:hover h6 {
     color: #000
 }
 
@@ -808,6 +827,10 @@ p {
         transform: rotate(0deg);
         left: 0%;
     }
+    .contact-h-100vh {
+        min-height: auto
+    }
+    
 }
 
 @media (max-width:576px) {
