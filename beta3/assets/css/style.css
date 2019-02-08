@@ -586,23 +586,22 @@ p {
 }
 
 .marvin-header {
-    background: url(./../images/rubik-product.jpg) no-repeat right;
-    background-size: cover;
+    background: url(./../images/rubik-product.png) no-repeat center right;
 }
 
 .about-us-header {
-    background: url(./../images/about-rubik.jpg) no-repeat right;
+    background: url(./../images/about-rubik.jpg) no-repeat bottom right;
     background-size: cover;
 }
 
 .career-header {
-    background: url(./../images/rubik-career.jpg) no-repeat right;
-    background-size: cover;
+    background: #fff url(./../images/rubik-career.png) no-repeat center right;
+    background-size: contain;
 }
 
 .team-header {
-    background: url(./../images/rubik-team.jpg) no-repeat bottom right;
-    background-size: cover;
+    background: #fff url(./../images/rubik-team.png) no-repeat bottom right;
+    background-size: contain;
 }
 
 .custom-header-heading {
@@ -825,7 +824,7 @@ p {
         min-height: auto
     }
     .custom-header-bg::before {
-        background: rgba(0, 0, 0, 0.8);
+        background: rgba(0, 0, 0, 0.85);
     }
 }
 
