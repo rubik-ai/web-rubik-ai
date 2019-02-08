@@ -71,7 +71,7 @@ $(window).scroll(function () {
 	};
 
 	//vertical text in sidebar
-	if (height > 250) {
+	if (height > 300) {
 		$(".page-title-head").addClass("appear");
 	}
 	else { $(".page-title-head").removeClass("appear"); }
