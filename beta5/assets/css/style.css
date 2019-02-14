@@ -66,7 +66,7 @@ a {
     font-weight: 600
 }
 
-.font--helvetica-bold {
+.font-helvetica--bold {
     font-family: 'fontHelveticaBd', sans-serif;
     font-weight: bold
 }
@@ -636,8 +636,7 @@ p {
 }
 
 .header-text {
-    font-size: 18px;
-    line-height: 1.3
+    line-height: 1.6em
 }
 
 .custom-tab--header li .nav-link.active, .custom-tab--header li .nav-link {
@@ -651,8 +650,18 @@ p {
 }
 
 .custom-tab--header li .nav-link.active {
-    background: #fff;
-    color: #0070c9;
+    color: #fff;
+}
+
+.custom-tab--header:not(.nav-dark) li .nav-link.active:before {
+    position: absolute;
+    content: '';
+    border-top: 8px solid #0070c9;
+    border-right: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-left: 8px solid transparent;
+    left: calc(50% - 8px);
+    bottom: -15px;
 }
 
 .nav-dark.custom-tab--header li .nav-link.active, .nav-dark.custom-tab--header li .nav-link {
@@ -666,7 +675,6 @@ p {
     background: #fff;
     border-bottom: none;
 }
-
 
 .grayscale-effect {
     filter: grayscale(65%) brightness(110%);
@@ -682,6 +690,19 @@ p {
     filter: grayscale(0%) brightness(115%);
     -webkit-transform: scale(1.05);
     transform: scale(1.05);
+}
+
+.linkedin-icon {
+    color: #666;
+    display: inline-block;
+    line-height: 28px;
+    width: 28px;
+    text-align: center;
+    border-radius: 4px;
+}
+
+.linkedin-icon:hover {
+    color: #0073b0;
 }
 
 .contact-h-100vh {
@@ -820,6 +841,7 @@ p {
         border: none;
     }
 }
+
 @media (max-width:768px) {
     .container {
         max-width: 420px;
