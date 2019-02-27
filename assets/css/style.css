@@ -925,7 +925,7 @@ p {
     display: inline-block
 }
 .urban-opening-li{
-    padding: 20px 30px 20px 30px!important;
+    padding: 15px 20px!important;
     border-bottom: 0!important; 
     position: relative;
     margin-bottom: 30px !important;
@@ -945,7 +945,7 @@ p {
 
 #UrbanhireWidget .urban-job-title {
     font-size: 1.4em!important;
-    margin-top: 20px; position: relative; padding: 10px 30px;
+    margin-top: 20px; position: relative; padding: 10px 20px;
 }#UrbanhireWidget .urban-job-title:before{
     content:"";
     position: absolute; 
