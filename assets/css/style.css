@@ -954,8 +954,13 @@ p {
     top:0; 
     height: 100%;
 } 
-.urban-job-shortdesc > span{line-height: 26px}
-#UrbanhireWidget ul li{list-style-type: none; line-height: 1.4em; padding: 5px 0; position: relative;}
+.urban-job-shortdesc > span{
+    line-height: 26px
+}
+#UrbanhireWidget ul li{
+    list-style-type: none; 
+    line-height: 1.4em; 
+    padding: 5px 0; position: relative;}
 #UrbanhireWidget ul li p{line-height: 1.4em!important; margin-bottom: 0px; color:#111; font-size: 14px}
 #UrbanhireWidget ul li::before{
     content:'\f105'; 
@@ -966,9 +971,10 @@ p {
 } 
 .urban-h2{
     font-size:18px;
+    line-height: 32px;
     color: #111 !important;
     position: relative; 
-    margin-bottom: 10px; 
+    margin-bottom: 12px; 
     display: block;
 }
 
@@ -987,8 +993,13 @@ p {
     color: #fff !important;
     padding: 7px 10px !important;
     font-size: 15px !important;
-}.urban-info-details, .urban-info-details p{color: #111 !important}
-.urban-info-details > p:nth-child(1){font-weight:bold}
+}
+.urban-info-details, .urban-info-details p{
+    color: #111 !important
+}
+.urban-info-details > p:nth-child(1){
+    font-weight:bold
+}
 #urbanBackToList{
     margin: 7px 0!important;
 }
