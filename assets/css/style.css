@@ -918,17 +918,17 @@ p {
     padding: 0!important; 
     margin:0!important;
     font-family: 'fontHelveticaRg', sans-serif !important;
-    color: #111!important
+    color: #111!important;max-width: 100% !important;
 }
 .urban-opening-li{
     width: 50%;
     display: inline-block
 }
 .urban-opening-li{
-    padding: 15px 20px!important;
+    padding: 15px 10px 15px 20px!important;
     border-bottom: 0!important; 
     position: relative;
-    margin-bottom: 30px !important;
+    margin:10px 0 30px 0 !important;
 }
 .urban-opening-li:before{
     content:"";
@@ -941,11 +941,14 @@ p {
 #UrbanhireWidget .urban-show-detail-position{
     color: #111!important
 }
+.urban-li-location b{display: none}
+.urban-li-location{margin-left: -3px}
+
 .urbanhire-powerby{display:none!important;}
 
 #UrbanhireWidget .urban-job-title {
     font-size: 1.4em!important;
-    margin-top: 20px; position: relative; padding: 10px 20px;
+    margin-top: 10px; position: relative; padding: 10px 20px;
 }#UrbanhireWidget .urban-job-title:before{
     content:"";
     position: absolute; 
@@ -972,10 +975,11 @@ p {
 .urban-h2{
     font-size:18px;
     line-height: 32px;
-    color: #111 !important;
+    color: #111 !important; 
+    font-weight: bold;
     position: relative; 
     margin-bottom: 12px; 
-    display: block;
+    display: inline-block;
 }
 
 .urban-h2::before{
@@ -983,7 +987,7 @@ p {
     position: absolute; 
     left: 0; 
     bottom:0; 
-    width: 100px; 
+    width: 100%; 
     border-bottom:2px solid #111;
 }
 .urban-btn.urban-btn-apply {
@@ -997,9 +1001,15 @@ p {
 .urban-info-details, .urban-info-details p{
     color: #111 !important
 }
-.urban-info-details > p:nth-child(1){
-    font-weight:bold
-}
 #urbanBackToList{
-    margin: 7px 0!important;
+    position: absolute;
+    right:0; top: 0;
+    margin: 24px 0!important;
+}
+
+@media (max-width:768px) {
+
+    .urban-opening-li{
+        width: 100%;
+    }
 }
