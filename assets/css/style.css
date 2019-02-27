@@ -995,7 +995,7 @@ p {
     border-radius: 0 !important;
     background: #19A4FD !important;
     color: #fff !important;
-    padding: 7px 10px !important;
+    padding: 10px 15px !important;
     font-size: 15px !important;
     transform: perspective(0) translateZ(0);
     transition-duration: 0.3s;
@@ -1005,7 +1005,6 @@ p {
 .urban-btn.urban-btn-apply:hover, .urban-btn.urban-btn-apply:focus, .urban-btn.urban-btn-apply:active {
     -webkit-transform: scale(1.04);
     transform: scale(1.04);
-    background: #068fe6 !important;
 }
 .urban-info-details, .urban-info-details p{
     color: #111 !important
