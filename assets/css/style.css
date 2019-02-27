@@ -933,7 +933,7 @@ p {
 .urban-opening-li:before{
     content:"";
     position: absolute; 
-    border-left: 4px solid #19A4FD;
+    border-left: 1px solid #ccc;
     left:15px; 
     top:0; 
     height: 100%;
@@ -952,7 +952,7 @@ p {
 }#UrbanhireWidget .urban-job-title:before{
     content:"";
     position: absolute; 
-    border-left: 4px solid #19A4FD;
+    border-left: 1px solid #ccc;
     left:2px; 
     top:0; 
     height: 100%;
@@ -1020,4 +1020,10 @@ p {
     .urban-opening-li{
         width: 100%;
     }
+
+    #urbanBackToList{
+        top: -24px;
+        margin: 5px 0!important;
+    }
+
 }
