@@ -442,18 +442,20 @@ p {
 
 /*learn more*/
 
-.learn-more-link, .learn-more-link .fa, .learn-more-link span {
+.learn-more-link, .learn-more-link .fa, .learn-more-link span, #urbanBackToList {
     display: inline-block;
     line-height: 20px;
+    font-size: 16px;
 }
 
-.learn-more-link span {
+.learn-more-link span, #urbanBackToList {
     border: 0;
-    padding: 2px 0px;
+    padding: 2px 0px !important;
     position: relative;
+    color: #0056b3 !important;
 }
 
-.learn-more-link span::before, button::after {
+.learn-more-link span::before, .learn-more-link span::after, #urbanBackToList::before, #urbanBackToList::after {
     box-sizing: inherit;
     content: '';
     position: absolute;
@@ -461,7 +463,7 @@ p {
     height: 100%;
 }
 
-.learn-more-link span::before, .learn-more-link span::after {
+.learn-more-link span::before, .learn-more-link span::after, #urbanBackToList::before, #urbanBackToList::after {
     top: 0;
     left: 0;
     height: 100%;
@@ -470,13 +472,13 @@ p {
     transform-origin: center;
 }
 
-.learn-more-link span::before {
+.learn-more-link span::before, #urbanBackToList::before {
     border-bottom: 1px solid #0070c9;
     -webkit-transform: scale3d(0, 1, 1);
     transform: scale3d(0, 1, 1);
 }
 
-.learn-more-link span:hover::before {
+.learn-more-link span:hover::before, #urbanBackToList:hover::before {
     -webkit-transform: scale3d(1, 1, 1);
     transform: scale3d(1, 1, 1);
     transition: -webkit-transform 0.4s;
@@ -911,4 +913,82 @@ p {
     .mac.webkit .blinking-cursor {
         height: 2px;
     }
+}
+#UrbanhireWidget{
+    padding: 0!important; 
+    margin:0!important;
+    font-family: 'fontHelveticaRg', sans-serif !important;
+    color: #111!important
+}
+.urban-opening-li{
+    width: 50%;
+    display: inline-block
+}
+.urban-opening-li{
+    padding: 20px 30px 20px 30px!important;
+    border-bottom: 0!important; 
+    position: relative;
+    margin-bottom: 30px !important;
+}
+.urban-opening-li:before{
+    content:"";
+    position: absolute; 
+    border-left: 4px solid #19A4FD;
+    left:2px; 
+    top:0; 
+    height: 100%;
+} 
+#UrbanhireWidget .urban-show-detail-position{
+    color: #111!important
+}
+.urbanhire-powerby{display:none!important;}
+
+#UrbanhireWidget .urban-job-title {
+    font-size: 1.4em!important;
+    margin-top: 20px; position: relative; padding: 10px 30px;
+}#UrbanhireWidget .urban-job-title:before{
+    content:"";
+    position: absolute; 
+    border-left: 4px solid #19A4FD;
+    left:2px; 
+    top:0; 
+    height: 100%;
+} 
+.urban-job-shortdesc > span{line-height: 26px}
+#UrbanhireWidget ul li{list-style-type: none; line-height: 1.4em; padding: 5px 0; position: relative;}
+#UrbanhireWidget ul li p{line-height: 1.4em!important; margin-bottom: 0px; color:#111; font-size: 14px}
+#UrbanhireWidget ul li::before{
+    content:'\f105'; 
+    position: absolute; 
+    left: -15px; 
+    color:#0056b3; 
+    font-family: 'fontawesome'
+} 
+.urban-h2{
+    font-size:18px;
+    color: #111 !important;
+    position: relative; 
+    margin-bottom: 10px; 
+    display: block;
+}
+
+.urban-h2::before{
+    content: ''; 
+    position: absolute; 
+    left: 0; 
+    bottom:0; 
+    width: 100px; 
+    border-bottom:2px solid #111;
+}
+.urban-btn.urban-btn-apply {
+    border: 0 !important;
+    border-radius: 0 !important;
+    background: #111 !important;
+    color: #fff !important;
+    padding: 7px 10px !important;
+    font-size: 15px !important;
+}.urban-info-details, .urban-info-details p{color: #111 !important}
+.urban-info-details > p:nth-child(1){font-weight:bold}
+#urbanBackToList{
+    margin: 7px 0!important;
 }
