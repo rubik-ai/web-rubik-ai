@@ -919,13 +919,13 @@ p {
     margin:0!important;
     font-family: 'fontHelveticaRg', sans-serif !important;
     color: #111!important;max-width: 100% !important;
-}
+}.urban-job-list-block{margin: 0 -15px;}
 .urban-opening-li{
     width: 50%;
     display: inline-block
 }
 .urban-opening-li{
-    padding: 15px 10px 15px 20px!important;
+    padding: 15px 25px 15px 35px!important;
     border-bottom: 0!important; 
     position: relative;
     margin:10px 0 30px 0 !important;
@@ -934,7 +934,7 @@ p {
     content:"";
     position: absolute; 
     border-left: 4px solid #19A4FD;
-    left:2px; 
+    left:15px; 
     top:0; 
     height: 100%;
 } 
@@ -993,10 +993,19 @@ p {
 .urban-btn.urban-btn-apply {
     border: 0 !important;
     border-radius: 0 !important;
-    background: #0056b3 !important;
+    background: #19A4FD !important;
     color: #fff !important;
     padding: 7px 10px !important;
     font-size: 15px !important;
+    transform: perspective(0) translateZ(0);
+    transition-duration: 0.3s;
+    transition-property: transform;
+}
+
+.urban-btn.urban-btn-apply:hover, .urban-btn.urban-btn-apply:focus, .urban-btn.urban-btn-apply:active {
+    -webkit-transform: scale(1.04);
+    transform: scale(1.04);
+    background: #068fe6 !important;
 }
 .urban-info-details, .urban-info-details p{
     color: #111 !important
