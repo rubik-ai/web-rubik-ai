@@ -1,0 +1,517 @@
+{
+  "versionId": 8,
+  "eventName": "ORDERED_UNIT_CANCELLED",
+  "resource": {
+    "id": "TH7KXTC",
+    "lineOfBusiness": "SPECIALTY",
+    "orderType": "SALES",
+    "market": "CA",
+    "purpose": "REGULAR",
+    "country": "CA",
+    "createdOn": "2019-07-19T12:46:09-0400",
+    "fraudVerificationStatus": "ACCEPT",
+    "posTracking": {
+      "originatingClient": "ECOM",
+      "brand": "GP",
+      "type": "Web",
+      "webSessionId": "984e3bfd-8458-41e3-82d6-a5021c774104",
+      "adCatchCode": "gcemmain1",
+      "localeCode": "en_CA"
+    },
+    "customer": {
+      "id": "CZaTfUkrpIst_jBLbScNFA",
+      "type": "guest"
+    },
+    "donations": [],
+    "shipmentPreference": {
+      "maxDaysToDeliver": 9,
+      "minDaysToDeliver": 7,
+      "businessDay": true,
+      "withinCutoff": "-1",
+      "shipMethod": "Basic Shipping",
+      "charges": [
+        {
+          "name": "ShipAndHandle",
+          "category": "ShipAndHandle",
+          "amount": 0
+        }
+      ],
+      "taxes": [
+        {
+          "chargeCategory": "ShipAndHandle",
+          "chargeName": "ShipAndHandle",
+          "taxName": "SALES",
+          "taxPercentage": 0,
+          "taxAmount": 0,
+          "taxableAmount": 0
+        }
+      ]
+    },
+    "shippingAddress": {
+      "person": {
+        "firstName": "",
+        "lastName": ""
+      },
+      "address": {
+        "addressLine1": "",
+        "cityName": "Toronto",
+        "stateProvinceCode": "ON",
+        "stateProvinceName": "Ontario",
+        "postalCode": "M1V 2H8",
+        "countryCode": "CA",
+        "countryName": "CA",
+        "verificationStatus": "VALIDATED",
+        "addressLine2": ""
+      },
+      "phoneNumber": "",
+      "email": "",
+      "deliveryPointValidationStatus": "9",
+      "isResidentialAddress": false
+    },
+    "giftPreference": {
+      "giftIndicator": false,
+      "complimentaryBoxQty": "0"
+    },
+    "boxStufferPreference": {
+      "operationalMsg": "G"
+    },
+    "payments": [
+      {
+        "amount": 112.37,
+        "currencyCode": "CAD",
+        "type": "Credit Card",
+        "billingAddress": {
+          "person": {
+            "firstName": "",
+            "lastName": "",
+            "cityName": "",
+            "verificationStatus": ""
+          },
+          "address": {
+            "addressLine1": "",
+            "cityName": "Toronto",
+            "stateProvinceCode": "ON",
+            "stateProvinceName": "Ontario",
+            "postalCode": "M1V 2H8",
+            "countryCode": "CA",
+            "countryName": "CA",
+            "verificationStatus": "VALIDATED",
+            "addressLine2": ""
+          },
+          "phoneNumber": "",
+          "email": "",
+          "deliveryPointValidationStatus": "9",
+          "isResidentialAddress": ""
+        },
+        "subType": "",
+        "cardNumber": ""
+      }
+    ],
+    "links": [
+      {
+        "rel": "orderItems",
+        "href": "https://api.azwus.gaptech.com/commerce/orders/TH7KXTC/order-items?versionNumber=8"
+      },
+      {
+        "rel": "self",
+        "href": "https://api.azwus.gaptech.com/commerce/orders/TH7KXTC?versionNumber=8"
+      }
+    ],
+    "orderItems": [
+      {
+        "id": 1,
+        "product": {
+          "skuNumber": "4689020130001",
+          "skuBrand": "GP",
+          "pricing": {
+            "currentPrice": 29.99,
+            "paidPrice": 14.99,
+            "listPrice": 79.95,
+            "retailPrice": 79.95
+          },
+          "itemColorDescription": {
+            "fr_CA": "imprimé à pois",
+            "en_CA": "navy dot"
+          },
+          "itemDescription": {
+            "fr_CA": "Robe-camisole mi-longue à ourlet à volant",
+            "en_CA": "Flutter-Hem Tank Midi Dress"
+          },
+          "itemSizeDescription": {
+            "fr_CA": "P",
+            "en_CA": "S"
+          },
+          "itemStyleDescription": {
+            "fr_CA": "Robe-camisole mi-longue à ourlet à volant",
+            "en_CA": "Flutter-Hem Tank Midi Dress"
+          }
+        },
+        "promisedDates": [
+          {
+            "dateType": "FPDD",
+            "date": "2019-08-01T12:00:00-0400"
+          }
+        ],
+        "unitStatuses": [
+          {
+            "name": "RELEASED",
+            "quantity": "1",
+            "timeStamp": "2019-07-19T12:46:12-0400",
+            "release": {
+              "rel": "Self",
+              "href": "https://api.azwus.gaptech.com/commerce/orders/TH7KXTC/releases/GQQ28XD6F"
+            }
+          }
+        ],
+        "promotions": [
+          {
+            "awardId": 2254103,
+            "category": "Discount",
+            "amountPerUnit": -15,
+            "promoId": 563133,
+            "type": "PCTOFF"
+          }
+        ],
+        "taxes": [
+          {
+            "chargeCategory": "Price",
+            "chargeName": "Price",
+            "taxName": "HST",
+            "taxPercentage": 13,
+            "unitTaxAmount": 1.95,
+            "unitTaxableAmount": 29.99
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "product": {
+          "skuNumber": "4689020330000",
+          "skuBrand": "GP",
+          "pricing": {
+            "currentPrice": 29.99,
+            "paidPrice": 14.99,
+            "listPrice": 79.95,
+            "retailPrice": 79.95
+          },
+          "itemColorDescription": {
+            "fr_CA": "PÊCHE ROUGE",
+            "en_CA": "red peach"
+          },
+          "itemDescription": {
+            "fr_CA": "Robe-camisole mi-longue à ourlet à volant",
+            "en_CA": "Flutter-Hem Tank Midi Dress"
+          },
+          "itemSizeDescription": {
+            "fr_CA": "TP",
+            "en_CA": "XS"
+          },
+          "itemStyleDescription": {
+            "fr_CA": "Robe-camisole mi-longue à ourlet à volant",
+            "en_CA": "Flutter-Hem Tank Midi Dress"
+          }
+        },
+        "promisedDates": [
+          {
+            "dateType": "FPDD",
+            "date": "2019-08-01T12:00:00-0400"
+          }
+        ],
+        "unitStatuses": [
+          {
+            "name": "RELEASED",
+            "quantity": "1",
+            "timeStamp": "2019-07-19T12:46:12-0400",
+            "release": {
+              "rel": "Self",
+              "href": "https://api.azwus.gaptech.com/commerce/orders/TH7KXTC/releases/GQQ28XD6F"
+            }
+          }
+        ],
+        "promotions": [
+          {
+            "awardId": 2254103,
+            "category": "Discount",
+            "amountPerUnit": -15,
+            "promoId": 563133,
+            "type": "PCTOFF"
+          }
+        ],
+        "taxes": [
+          {
+            "chargeCategory": "Price",
+            "chargeName": "Price",
+            "taxName": "HST",
+            "taxPercentage": 13,
+            "unitTaxAmount": 1.95,
+            "unitTaxableAmount": 29.99
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "product": {
+          "skuNumber": "4689020330001",
+          "skuBrand": "GP",
+          "pricing": {
+            "currentPrice": 29.99,
+            "paidPrice": 14.99,
+            "listPrice": 79.95,
+            "retailPrice": 79.95
+          },
+          "itemColorDescription": {
+            "fr_CA": "PÊCHE ROUGE",
+            "en_CA": "red peach"
+          },
+          "itemDescription": {
+            "fr_CA": "Robe-camisole mi-longue à ourlet à volant",
+            "en_CA": "Flutter-Hem Tank Midi Dress"
+          },
+          "itemSizeDescription": {
+            "fr_CA": "P",
+            "en_CA": "S"
+          },
+          "itemStyleDescription": {
+            "fr_CA": "Robe-camisole mi-longue à ourlet à volant",
+            "en_CA": "Flutter-Hem Tank Midi Dress"
+          }
+        },
+        "promisedDates": [
+          {
+            "dateType": "FPDD",
+            "date": "2019-08-01T12:00:00-0400"
+          }
+        ],
+        "unitStatuses": [
+          {
+            "name": "RELEASED",
+            "quantity": "1",
+            "timeStamp": "2019-07-19T12:46:12-0400",
+            "release": {
+              "rel": "Self",
+              "href": "https://api.azwus.gaptech.com/commerce/orders/TH7KXTC/releases/GQQ28XD6F"
+            }
+          }
+        ],
+        "promotions": [
+          {
+            "awardId": 2254103,
+            "category": "Discount",
+            "amountPerUnit": -15,
+            "promoId": 563133,
+            "type": "PCTOFF"
+          }
+        ],
+        "taxes": [
+          {
+            "chargeCategory": "Price",
+            "chargeName": "Price",
+            "taxName": "HST",
+            "taxPercentage": 13,
+            "unitTaxAmount": 1.95,
+            "unitTaxableAmount": 29.99
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "product": {
+          "skuNumber": "4407440030001",
+          "skuBrand": "GP",
+          "pricing": {
+            "currentPrice": 14.99,
+            "paidPrice": 7.49,
+            "listPrice": 26.95,
+            "retailPrice": 26.95
+          },
+          "itemColorDescription": {
+            "fr_CA": "CAMOUFLAGE GRIS",
+            "en_CA": "GREY CAMO"
+          },
+          "itemDescription": {
+            "fr_CA": "T-shirt ras du cou à manches courtes à imprimé camouflage rétro",
+            "en_CA": "Vintage Wash Print Crewneck T-Shirt"
+          },
+          "itemSizeDescription": {
+            "fr_CA": "P",
+            "en_CA": "S"
+          },
+          "itemStyleDescription": {
+            "fr_CA": "T-shirt ras du cou à manches courtes à imprimé camouflage rétro",
+            "en_CA": "Vintage Wash Print Crewneck T-Shirt"
+          }
+        },
+        "promisedDates": [
+          {
+            "dateType": "FPDD",
+            "date": "2019-08-01T12:00:00-0400"
+          }
+        ],
+        "unitStatuses": [
+          {
+            "name": "CANCELLED",
+            "quantity": "1",
+            "timeStamp": "2019-07-30T04:38:31-0400",
+            "cancelReason": "ITM_UNAVL_NO_STOCK_LB"
+          }
+        ],
+        "promotions": [
+          {
+            "awardId": 2254103,
+            "category": "Discount",
+            "amountPerUnit": -7.5,
+            "promoId": 563133,
+            "type": "PCTOFF"
+          }
+        ],
+        "taxes": [
+          {
+            "chargeCategory": "Price",
+            "chargeName": "Price",
+            "taxName": "HST",
+            "taxPercentage": 13,
+            "unitTaxAmount": 0.98,
+            "unitTaxableAmount": 14.99
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "product": {
+          "skuNumber": "4407130033030",
+          "skuBrand": "GP",
+          "pricing": {
+            "currentPrice": 78.99,
+            "paidPrice": 39.49,
+            "listPrice": 88,
+            "retailPrice": 88
+          },
+          "itemColorDescription": {
+            "fr_CA": "INDIGO USÉ/DÉCHIRÉ",
+            "en_CA": "dark indigo"
+          },
+          "itemDescription": {
+            "fr_CA": "Jean Wearlight d'aspect usé, coupe moulante avec GapFlex",
+            "en_CA": "Wearlight Destructed Skinny Jeans with GapFlex"
+          },
+          "itemSizeDescription": {
+            "fr_CA": "Taille 76 cm Longueur 76 cm",
+            "en_CA": "30W 30L"
+          },
+          "itemStyleDescription": {
+            "fr_CA": "Jean Wearlight d'aspect usé, coupe moulante avec GapFlex",
+            "en_CA": "Wearlight Destructed Skinny Jeans with GapFlex"
+          }
+        },
+        "promisedDates": [
+          {
+            "dateType": "FPDD",
+            "date": "2019-08-01T12:00:00-0400"
+          }
+        ],
+        "unitStatuses": [
+          {
+            "name": "RELEASED",
+            "quantity": "1",
+            "timeStamp": "2019-07-19T12:46:12-0400",
+            "release": {
+              "rel": "Self",
+              "href": "https://api.azwus.gaptech.com/commerce/orders/TH7KXTC/releases/GQQ28XD6F"
+            }
+          }
+        ],
+        "promotions": [
+          {
+            "awardId": 2254103,
+            "category": "Discount",
+            "amountPerUnit": -39.5,
+            "promoId": 563133,
+            "type": "PCTOFF"
+          }
+        ],
+        "taxes": [
+          {
+            "chargeCategory": "Price",
+            "chargeName": "Price",
+            "taxName": "HST",
+            "taxPercentage": 13,
+            "unitTaxAmount": 5.13,
+            "unitTaxableAmount": 78.99
+          }
+        ]
+      },
+      {
+        "id": 6,
+        "product": {
+          "skuNumber": "4407320530001",
+          "skuBrand": "GP",
+          "pricing": {
+            "currentPrice": 14.99,
+            "paidPrice": 7.49,
+            "listPrice": 29.95,
+            "retailPrice": 29.95
+          },
+          "itemColorDescription": {
+            "fr_CA": "CLOCHES CORAIL",
+            "en_CA": "coral stripe"
+          },
+          "itemDescription": {
+            "fr_CA": "T-shirt ras du cou à manches courtes avec rayures rétro",
+            "en_CA": "Vintage Wash Stripe Crewneck T-Shirt"
+          },
+          "itemSizeDescription": {
+            "fr_CA": "P",
+            "en_CA": "S"
+          },
+          "itemStyleDescription": {
+            "fr_CA": "T-shirt ras du cou à manches courtes avec rayures rétro",
+            "en_CA": "Vintage Wash Stripe Crewneck T-Shirt"
+          }
+        },
+        "promisedDates": [
+          {
+            "dateType": "FPDD",
+            "date": "2019-08-01T12:00:00-0400"
+          }
+        ],
+        "unitStatuses": [
+          {
+            "name": "RELEASED",
+            "quantity": "1",
+            "timeStamp": "2019-07-19T12:46:12-0400",
+            "release": {
+              "rel": "Self",
+              "href": "https://api.azwus.gaptech.com/commerce/orders/TH7KXTC/releases/GQQ28XD6F"
+            }
+          }
+        ],
+        "promotions": [
+          {
+            "awardId": 2254103,
+            "category": "Discount",
+            "amountPerUnit": -7.5,
+            "promoId": 563133,
+            "type": "PCTOFF"
+          }
+        ],
+        "taxes": [
+          {
+            "chargeCategory": "Price",
+            "chargeName": "Price",
+            "taxName": "HST",
+            "taxPercentage": 13,
+            "unitTaxAmount": 0.97,
+            "unitTaxableAmount": 14.99
+          }
+        ]
+      }
+    ]
+  },
+  "createdOn": "2019-07-30T04:38:31.963-0400",
+  "receivedTime": "2019-07-30T08:40:03.906Z",
+  "BATCH_PROC_STRT_DTTM": "2019-07-30T08:40:03.906Z",
+  "MSG_PROC_STRT_DTTM": "2019-07-30T08:40:04.459Z",
+  "API_CALL_STRT_DTTM": "2019-07-30T08:40:04.468Z",
+  "API_CALL_END_DTTM": "2019-07-30T08:40:04.897Z",
+  "ADAPTOR_PROC_END_DTTM": "2019-07-30T08:40:04.897Z"
+}
