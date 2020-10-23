@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<script src="https://d3js.org/d3.v5.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+  #controls {
+    position: fixed;
+    left: 0px;
+    width: 100%;
+    top: 0px;
+    height: 10%;
+  }
+
+  #chart {
+    position: fixed;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+  }
+
+  path.link {
+    fill: none;
+    stroke: #c5c5c5;
+    stroke-width: 1px;
+  }
+  circle,
+  rect {
+    fill: #e6e4e4!important;
+    stroke: #fff;
+    stroke-width: 1.5px;
+  }
+  .main-dataset {
+    fill:#4796d8!important;
+  }
+
+  text {
+    fill: #000000;
+    font-size: 12px;
+    font-weight: lighter;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  .ingoing {
+    stroke: #237690 !important;
+    letter-spacing: 2px;
+    font-weight: 100!important;
+    font-size: 12px;
+  }
+  .ingoing-text {
+    color: #237690 !important;
+    -webkit-text-stroke-width:0px!important;
+    letter-spacing: 2px;
+    font-weight: 100!important;
+    font-size: 12px;
+  }
+
+  .outgoing {
+    stroke: #FA1209 !important;
+     letter-spacing: 2px;
+     font-size: 12px;
+     font-weight: lighter;
+  }
+  .outgoing-text {
+    color: #FA1209 !important;
+    -webkit-text-stroke-width:0px!important;
+    letter-spacing: 2px;
+    font-weight: 100!important;
+    font-size: 12px;
+  }
+
+  .selected {
+    stroke: #000000 !important;
+    letter-spacing: 2px;
+    font-weight: lighter;
+    font-size: 12px;
+  }
+  .selected-text {
+    color: #000000;
+    letter-spacing: 2px;
+    -webkit-text-stroke-width:0px!important;
+  }
+
+  .float-right {
+    float: right;
+    margin-right: 10px;
+  }
+
+  .tooltip {
+    position: absolute;
+    width: 100px;
+    height: 50px;
+    fill:#FFF!important;
+    stroke: rgba(0,0,0,.03)!important;
+    color: #FA1209!important;
+  }
+ 
+</style>
+
+<body>
+  <div id="chart"></div>
+
+  <!-- <div id="controls">
+    <button class="float-right" id="zoom_out"> -</button>
+    <button class="float-right" id="zoom_in">+</button>
+  </div> -->
+
+  <script>
+    graph = {
+      "directed": true, "graph": [], "nodes": [{ "id": 0, "name": "dataset_0", "level": 0, "type": "dataset" }, { "id": 1, "name": "dataset_1", "level": 0, "type": "dataset" }, { "id": 2, "name": "dataset_2", "level": 0, "type": "dataset" }, { "id": 3, "name": "dataset_3", "level": 0, "type": "dataset" }, { "id": 4, "name": "job_4", "level": 1, "type": "job" }, { "id": 5, "name": "job_5", "level": 1, "type": "job" }, { "id": 6, "name": "dataset_6", "level": 2, "type": "dataset" }, { "id": 7, "name": "dataset_7", "level": 2, "type": "dataset" }, { "id": 8, "name": "dataset_8", "level": 2, "type": "dataset" }, { "id": 9, "name": "dataset_9", "level": 2, "type": "dataset" }, { "id": 10, "name": "job_10", "level": 3, "type": "job" }, { "id": 11, "name": "dataset_11", "level": 4, "type": "dataset" }, { "id": 12, "name": "dataset_12", "level": 4, "type": "dataset" }, { "id": 13, "name": "dataset_13", "level": 4, "type": "dataset" }, { "id": 14, "name": "job_14", "level": 5, "type": "job" }, { "id": 15, "name": "job_15", "level": 5, "type": "job" }, { "id": 16, "name": "dataset_16", "level": 6, "type": "dataset" }], "links": [{ "source": 0, "target": 4 }, { "source": 1, "target": 4 }, { "source": 2, "target": 5 }, { "source": 3, "target": 5 }, { "source": 4, "target": 6 }, { "source": 5, "target": 7 }, { "source": 6, "target": 10 }, { "source": 6, "target": 14 }, { "source": 8, "target": 10 }, { "source": 7, "target": 10 }, { "source": 9, "target": 15 }, { "source": 10, "target": 11 }, { "source": 11, "target": 15 }, { "source": 12, "target": 14 }, { "source": 13, "target": 14 }, { "source": 14, "target": 16 }, { "source": 15, "target": 16 }, { "source": 0, "target": 10 }], "multigraph": false
+    }
+
+    var chartDiv = document.getElementById("chart");
+    var svg = d3.select(chartDiv).append("svg");
+
+    var linkedByIndex = {};
+    var num_links = {};
+    var num_links_incoming = {};
+    const maxlevel = graph.nodes.reduce(function (currentValue, node) {
+      return Math.max(node.level, currentValue);
+    }, 0);
+    var margin_range = [0, 5, 10, 15];
+    var randomOffsetMargin = [];
+
+    graph.links.forEach(function (d) {
+      linkedByIndex[d.source + "," + d.target] = 1;
+      num_links[d.target] = (num_links[d.target] != undefined ? num_links[d.target] + 1 : 1)
+      num_links[d.source] = (num_links[d.source] != undefined ? num_links[d.source] + 1 : 1)
+      num_links_incoming[d.target] = (num_links_incoming[d.target] != undefined ? num_links_incoming[d.target] + 1 : 1)
+      d.distance = graph.nodes[d.target].level - graph.nodes[d.source].level;
+      if (graph.nodes[d.target].level == maxlevel){
+        randomOffsetMargin.push(10);
+      } else {
+        var x = margin_range.shift();
+        randomOffsetMargin.push(x);
+        margin_range.push(x);
+      }
+    });
+    
+    var maxlinks = Object.values(num_links).reduce(function (currentValue, entry) {
+      return Math.max(entry, currentValue);
+    }, 0);
+
+    var mainContainer = svg.append('g').attr('id', 'main-container')
+
+
+// Call tick function with force simulation.
+    var simulation = d3.forceSimulation(graph.nodes)
+      .on('tick', tick);
+
+    // add the links
+    var path = mainContainer.selectAll("path")
+      .data(graph.links)
+      .enter().append("svg:path")
+      .attr("class", "link");
+
+    // define the nodes based on respective type.
+    var node = mainContainer.selectAll(".node")
+      .data(graph.nodes)
+      .enter().append("g")
+      .attr("class", function (d) {
+        if (d.type == 'job') {
+          return 'node rect';
+        } else if (d.type == 'dataset') {
+          return 'node circle';
+        }
+      })
+      .on("mouseenter",highlight(true))
+      .on("mouseleave", highlight(false))
+      .on("mouseover", function (d, i) {
+        //Make function calling conditional because we need to set tooltip bottom offset different based on type.
+        var tooltipFunction;
+        if(d.type == "job") {
+           tooltipFunction = topTooltipPath(150, 70, 15, d.x, d.y,15)
+        } else {
+          tooltipFunction = topTooltipPath(150, 70, 15, d.x, d.y, 20)
+        }
+        if (d.level !== maxlevel) {
+          tooltip
+            .transition()
+            .attr('d', tooltipFunction )
+            .style("opacity", 1)
+        }
+      })
+      .on("mouseout", function (d) {
+        tooltip.style("opacity", 0);
+      })
+      .call(d3.drag()
+        .on("start", dragstarted)
+        .on("drag", dragged)
+        .on("end", dragended));
+
+    // adding the circular node.
+    var circleNode = mainContainer.selectAll(".circle").append("circle")
+      .attr("z", 0)
+      .attr('class', function (d) {
+        if (d.type == "dataset") {
+          return "dataset"
+        } else if (d.type == "job") {
+          return "job"
+        }
+      });
+
+    //adding rect nodes
+    var cylindricalNode = mainContainer.selectAll('.rect').append('rect')
+      .attr('z', 0)
+      .attr('width', 60)
+      .attr('height', 30)
+      .attr('rx', 10)
+      .attr('ry', 20)
+      .attr('class', function (d) {
+        if (d.type == "dataset") {
+          return "dataset"
+        } else if (d.type == "job") {
+          return "job"
+        }
+      });
+
+      // Adding class for main-dataset.
+      d3.selectAll('.dataset').attr('class', function (d) {
+          if (d.level == maxlevel) {
+            return 'dataset main-dataset';
+          }
+      })
+
+
+    // add the text to nodes
+    var nodeText = node.append("text")
+      .attr("x",
+        function (d) {
+          if (d.type == 'dataset') {
+            return 10;
+          } else if (d.type == 'job') {
+            return 50;
+          }
+        })
+      .attr("z", 20)
+      .attr("dy", function (d) {
+        if (d.type == 'dataset') {
+          return 5;
+        } else if (d.type == 'job') {
+          return 20;
+        }
+      })
+      .text(function (d) {
+        return d.name;
+      });
+
+    function topTooltipPath(width, height, offset, x, y,bottomOffset) {
+        const left = x - (width / 2)
+        const right = x + (width / 2)
+        const top = y - (offset + height) - 20
+        const bottom = y - offset - 20
+        return `M ${x},${y - bottomOffset}
+        L ${x - offset},${bottom}
+        H ${left}
+        V ${top}
+        H ${right}
+        V ${bottom}
+        H ${x + offset}
+        L ${x},${y - bottomOffset} z`
+    }
+
+    function dragstarted(d) {
+      if (!d3.event.active) simulation.alphaTarget(0.3).restart()
+      d.fx = d.x;
+      d.fy = d.y;
+    }
+
+    function dragged(d) {
+      d.fx = d3.event.x;
+      d.fy = d3.event.y;
+    }
+
+    function dragended(d) {
+      if (!d3.event.active) simulation.alphaTarget(0);
+      d.fx = null;
+      d.fy = null;
+    }
+
+    function tick(e) {
+      var width = chartDiv.clientWidth,
+        height = chartDiv.clientHeight,
+        radius = 10
+      //randomOffsetMargin = [10, 19, 8, 28, 7, 19, 9, 13, 9, 16, 10, 20, 7, 12, 19, 20, 9, 14];
+
+      node
+        .attr("cx", function (d) {
+          return d.x = Math.max(d.radius, Math.min(width - d.radius - 75, d.x));
+        })
+        .attr("cy", function (d) {
+          return d.y = Math.max(d.radius, Math.min(height - d.radius, d.y));
+        })
+        .attr("transform", function (d) {
+          if (d.type === 'job') {
+            return "translate(" + (d.x - 20) + "," + (d.y - 15) + ")";
+          } else {
+            return "translate(" + d.x + "," + d.y + ")";
+          }
+        });
+
+
+      path.attr("d", function (d) {
+          if (d.target.y > d.source.y && d.target.x > d.source.x) {
+          return "M" + (d.source.x - 20) + "," + (d.source.y)
+            + "h" + ((d.target.x - d.source.x) - 2 * radius - randomOffsetMargin[d.index])
+            + "a" + radius + "," + radius + " 0 0 1 " + radius + "," + radius
+            + "v" + ((d.target.y - d.source.y) - 2 * radius)
+            + "a" + radius + "," + radius + " 1 0 0 " + radius + "," + radius
+            + "h" + randomOffsetMargin[d.index]
+
+        } if (d.source.x > d.target.x && d.source.y > d.target.y) {
+          return "M" + (d.source.x - 20) + "," + (d.source.y)
+            + "h" + ((100) - 2 * radius)
+            + "a" + -radius + "," + -radius + " 1 0 0 " + radius + "," + -radius
+            + "v" + (-(d.source.y - d.target.y) + 2 * radius)
+            + "a" + radius + "," + -radius + " 1 0 0 " + -radius + "," + -radius
+            + "h" + -((d.source.x - d.target.x) + 80)
+
+        } if (d.target.x > d.source.x && d.source.y > d.target.y) {
+          return "M" + (d.source.x - 20) + "," + (d.source.y)
+            + "h" + ((d.target.x - d.source.x) - 2 * radius - randomOffsetMargin[d.index])
+            + "a" + -radius + "," + -radius + " 1 0 0 " + radius + "," + -radius
+            + "v" + (-(d.source.y - d.target.y) + 2 * radius)
+            + "a" + radius + "," + radius + " 0 0 1 " + radius + "," + -radius
+            + "h" + randomOffsetMargin[d.index]
+
+        } if (d.target.y > d.source.y && d.source.x > d.target.x) {
+          return "M" + (d.source.x - 20) + "," + (d.source.y)
+            + "h" + ((100) - 2 * radius)
+            + "a" + radius + "," + radius + " 0 0 1 " + radius + "," + radius
+            + "v" + ((d.target.y - d.source.y) - 2 * radius)
+            + "a" + -radius + "," + radius + " 0 0 1 " + -radius + "," + radius
+            + "h" + (-(d.source.x - d.target.x) - 80)
+        }
+      });
+    }
+
+    function highlight(active) {
+      return function (d, i) {
+        //Adding class to path
+        path.classed("ingoing", function (link) {
+          return active && link.target === d;
+        });
+        path.classed("outgoing", function (link) {
+          return active && link.source === d;
+        });
+
+        //Adding class to node.
+        node.classed("ingoing", function (node) {
+          return active && linkedByIndex[node.id + "," + d.id];
+        });
+        node.classed("outgoing", function (node) {
+          return active && linkedByIndex[d.id + "," + node.id];
+        });
+        node.classed("selected", function (node) {
+          return active && d.id === node.id;
+        });
+
+        //Adding class to circular nodes.
+        circleNode.classed("ingoing", function (node) {
+          return active && linkedByIndex[node.id + "," + d.id];
+        });
+        circleNode.classed("outgoing", function (node) {
+          return active && linkedByIndex[d.id + "," + node.id];
+        });
+        circleNode.classed("selected", function (node) {
+          return active && d.id === node.id;
+        });
+
+        //Adding class cylindrical nodes.
+        cylindricalNode.classed("ingoing", function (node) {
+          return active && linkedByIndex[node.id + "," + d.id];
+        });
+        cylindricalNode.classed("outgoing", function (node) {
+          return active && linkedByIndex[d.id + "," + node.id];
+        });
+        cylindricalNode.classed("selected", function (node) {
+          return active && d.id === node.id;
+        });
+
+        //Adding class to node text.
+        nodeText.classed("ingoing", function (node) {
+          return active && linkedByIndex[node.id + "," + d.id];
+        });
+        nodeText.classed("outgoing", function (node) {
+          return active && linkedByIndex[d.id + "," + node.id];
+        });
+        nodeText.classed("selected", function (node) {
+          return active && d.id === node.id;
+        });
+      };
+    }
+
+    function redraw() {
+      var width = chartDiv.clientWidth;
+      var height = chartDiv.clientHeight;
+      const radius = 25;
+      const charge = 10;
+      const link_strength = .75;
+      
+      // adding height & width to svg.
+      svg.attr("width", width).attr("height", height);
+      
+      graph.nodes.forEach(function (d) {
+        d.radius = radius * Math.atan((num_links[d.id] != undefined ? num_links[d.id] : 0) / maxlinks * 2 * Math.PI);
+      });
+      graph.nodes.forEach(function (d) {
+        d.radius_inc = radius * Math.atan((num_links_incoming[d.id] != undefined ? num_links_incoming[d.id] : 0) / maxlinks * 2 * Math.PI);
+      });
+
+      circleNode.attr('r', function (d) {
+        if (maxlevel === d.level) {
+          return 30;
+        } else {
+          return 20;
+        }
+      });
+
+      var leveldistance = width / (maxlevel + 1);
+
+      simulation
+        .force('x', d3.forceX()
+          .x(function (d) {
+            return (d.level + 0.5) * leveldistance;
+          })
+          .strength(2.))
+        .force('y', d3.forceY()
+          .y(height / 2)
+          .strength(0.025));
+
+      simulation.force('link', d3.forceLink()
+        .links(graph.links)
+        .strength(function (d) {
+          return link_strength / d.target.radius_inc;
+        })
+        .distance(function (d) {
+          return d.distance * leveldistance
+        }))
+        .force('charge', d3.forceManyBody()
+          .strength(function (d) {
+            return -charge * d.radius;
+          }))
+        .force('collision', d3.forceCollide()
+          .radius(function (d) {
+            return d.radius;
+          }))
+        .alphaTarget(0.3)
+        .restart();
+    }
+
+    //Calling redraw function.
+    redraw();
+
+    //Added code for Drag & Drop.
+    d3.select(window).on("resize", redraw)
+    
+    function zoomActions() {
+      mainContainer.attr("transform", d3.event.transform);
+      tooltip.attr("transform", d3.event.transform)
+    }
+
+    var zoomHandler = d3.zoom()
+      .on("zoom", zoomActions);
+
+    //call zoom Handler function & disabled mouse wheel zoom. 
+    svg.call(zoomHandler)/* .on('wheel.zoom',null) */
+
+    // function for zoom-in & zoom-out functionality.
+    var containerSelection = d3.select('#main-container');
+    var width = chartDiv.clientWidth,height = chartDiv.clientWidth;
+
+    function zoomSvgContainer() {
+      var coordinates = d3.zoomTransform(containerSelection.node());
+      mainContainer.attr("transform",
+        "translate(" + coordinates.x + "," + coordinates.y + ")" +
+        "scale(" + coordinates.k + ")"
+      );
+      tooltip.attr("transform",
+        "translate(" + coordinates.x + "," + coordinates.y + ")" +
+        "scale(" + coordinates.k + ")"
+      );
+    }
+
+    var zoomFunction = d3.zoom().scaleExtent([1 / 4, 8]).on("zoom", zoomSvgContainer);
+
+    function interpolateZoom(translate, scale) {
+      return containerSelection.transition().duration(50)
+        .call(zoomFunction.transform,
+          d3.zoomIdentity.translate(translate[0], translate[1]).scale(scale))
+    }
+
+    function zoomButtonClick() {
+      //need to work on this logic in future.so we can set its relative position on button click based on last dragged coordinates of mousedragout event.need to explore more about mousedrag event to solve this issue.currenlty we are disabling zoom-in/zoom-out functionality and will enable it in future after refactoring the logic.
+      var direction = 1,
+        factor = 0.1,
+        target_zoom = 1,
+        center = [width / 2, height / 2],
+        extent = zoomFunction.scaleExtent(),
+        translate = d3.zoomTransform(containerSelection.node()),
+        translateCoordinates = [],
+        l = [],
+        zoomCoordinates = { x: translate.x, y: translate.y, k: translate.k };
+
+      d3.event.preventDefault();
+      direction = (this.id === 'zoom_in') ? 1 : -1;
+      target_zoom = zoomCoordinates.k * (1 + factor * direction);
+
+      if (target_zoom < extent[0] || target_zoom > extent[1]) { return false; }
+
+      translateCoordinates = [(center[0] - zoomCoordinates.x) / zoomCoordinates.k, (center[1] - zoomCoordinates.y) / zoomCoordinates.k];
+      zoomCoordinates.k = target_zoom;
+      l = [translateCoordinates[0] * zoomCoordinates.k + zoomCoordinates.x, translateCoordinates[1] * zoomCoordinates.k + zoomCoordinates.y];
+
+      zoomCoordinates.x += center[0] - l[0];
+      zoomCoordinates.y += center[1] - l[1];
+
+      //Called interpolate zoom funtion
+      interpolateZoom([zoomCoordinates.x, zoomCoordinates.y], zoomCoordinates.k);
+    }
+
+    d3.selectAll('button').on('click', zoomButtonClick);
+
+    // Placed tooltip at end so it will render above nodes(acts like z-index)
+    var tooltipContainer = d3.select('svg')
+    .append('g')
+    .attr('class','tooltip-container')
+    .append('defs')
+    .append('filter')
+    .attr('id','shadow')
+    .append('feDropShadow')
+    .attr('dx','0')
+    .attr('dy','2')
+    .attr('stdDeviation','2')
+    .attr('flood-color','rgba(0,0,0,.24)')
+    .attr('flood-opacity','0.5')
+    
+     var tooltip=  d3.select('.tooltip-container')
+      .append("path")
+      .attr('class','tooltip')
+      .attr('filter','url(#shadow)')
+      .attr('stroke','#CCC')
+      
+  </script>
+</body>
+
+</html>
